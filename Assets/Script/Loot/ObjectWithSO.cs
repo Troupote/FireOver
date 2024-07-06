@@ -2,5 +2,6 @@ using UnityEngine;
 
 public class ObjectWithSO : MonoBehaviour
 {
-    public MyScriptableObject myScriptableObject;
+    public BaseScriptableObject myScriptableObject;
 }
+

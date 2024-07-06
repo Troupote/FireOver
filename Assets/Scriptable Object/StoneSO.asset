@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01f083f7f67cae243a91bc93e766e130, type: 3}
-  m_Name: NewMyScriptableObject
+  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
+  m_Name: StoneSO
   m_EditorClassIdentifier: 
-  objectName: feur
+  objectName: 
   objectValue: 0
-  objectColor: {r: 0.41960788, g: 1, b: 0.61586624, a: 0}
-  ObjectImage: {fileID: 21300000, guid: f7f180cd80653f145bfebb4a16023e6b, type: 3}
+  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectImage: {fileID: 0}

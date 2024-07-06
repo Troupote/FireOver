@@ -6,7 +6,7 @@ using System;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public GameObject lootPrefab;
+    public GameObject[] lootPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
         for (int i = 0; i<19 ;i++)
         {
             Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(0,20),0,UnityEngine.Random.Range(0,20));
-            GameObject newLoots = Instantiate(lootPrefab, randomPosition, Quaternion.identity);
+            GameObject newLoots = Instantiate(lootPrefab[i%(lootPrefab.Length)], randomPosition, Quaternion.identity);
         }
     }
 

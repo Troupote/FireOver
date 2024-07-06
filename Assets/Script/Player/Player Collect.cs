@@ -7,7 +7,8 @@ public class PlayerCollect : MonoBehaviour
     private int i = 0;
     public Button ButtonE;
     public GameObject ButtonEO;
-    private bool IsClikked = false;
+    private bool IsClicked = false;
+    public Inventory inventory;
 
     void Start()
     {
@@ -16,49 +17,47 @@ public class PlayerCollect : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-
         ObjectWithSO objectWithSO = other.GetComponent<ObjectWithSO>();
         if (objectWithSO != null)
         {
-            MyScriptableObject scriptableObject = objectWithSO.myScriptableObject;
-            if (scriptableObject.objectName == "feur")
+            BaseScriptableObject scriptableObject = objectWithSO.myScriptableObject;
+            
+            if ( scriptableObject.objectName.Length > 0 )
             {
                 ButtonEO.SetActive(true);
-                if(IsClikked)
+
+                if (IsClicked)
                 {
-                    IsClikked = false;
-                    
+                    IsClicked = false;
+
                     if (i < imageObjects.Length)
                     {
                         imageObjects[i].GetComponent<Image>().sprite = scriptableObject.ObjectImage;
+                        inventory.AddItem(scriptableObject);
                         i++;
                     }
-                    Destroy(other.gameObject); // Détruire l'objet collecté
-                    ButtonEO.SetActive(false); 
-                }
 
+                    Destroy(other.gameObject); // Détruire l'objet collecté
+                    ButtonEO.SetActive(false);
+                }
             }
             else
             {
                 GetComponent<Renderer>().material.color = scriptableObject.objectColor;
-                
             }
-             
         }
     }
+
     public void OnClickButtonE()
     {
-        if(ButtonE.IsInteractable())
+        if (ButtonE.interactable)
         {
-            IsClikked = true;
+            IsClicked = true;
         }
-
-        
     }
 
     public void OnTriggerExit(Collider other)
     {
-        ButtonEO.SetActive(false); 
+        ButtonEO.SetActive(false);
     }
-
 }
