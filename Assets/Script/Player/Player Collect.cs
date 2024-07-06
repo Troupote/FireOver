@@ -7,12 +7,17 @@ public class PlayerCollect : MonoBehaviour
     private int i = 0;
     public Button ButtonE;
     public GameObject ButtonEO;
+
+    public Button ButtonBuy;
+    public GameObject ButtonBuyO;
     private bool IsClicked = false;
+    private bool IsClickedBuy = false;
     public Inventory inventory;
 
     void Start()
     {
         ButtonEO.SetActive(false);
+        ButtonBuyO.SetActive(false);
     }
 
     public void OnTriggerStay(Collider other)
@@ -46,6 +51,48 @@ public class PlayerCollect : MonoBehaviour
                 GetComponent<Renderer>().material.color = scriptableObject.objectColor;
             }
         }
+        MachineObjectSo MachineobjectWithSO = other.GetComponent<MachineObjectSo>();
+        if (MachineobjectWithSO != null)
+        {
+            MachineScriptableObject MachinescriptableObject = MachineobjectWithSO.myMachineScriptableObject;
+            
+            
+            if ( MachinescriptableObject.objectName.Length > 0 )
+            {
+                
+                ButtonBuyO.SetActive(true);
+
+                if (IsClickedBuy)
+                {
+                    IsClickedBuy = false;
+                    GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
+                    
+                    if(inventory.items.Contains(MachinescriptableObject.SOprefab))
+                    {
+                        inventory.RemoveItem(MachinescriptableObject.SOprefab);
+                        foreach (var elem in imageObjects)
+                        {
+                            if(elem.GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
+                            {
+                                elem.GetComponent<Image>().sprite = null;
+                                break;
+                            }
+                            
+                        }
+                        
+                        Debug.Log("trouvé");
+                    }
+                    else
+                    {
+                        Debug.Log("pas trouvé");
+                    }
+
+                    ButtonBuyO.SetActive(false);
+                }
+            }
+
+        }
+
     }
 
     public void OnClickButtonE()
@@ -56,8 +103,17 @@ public class PlayerCollect : MonoBehaviour
         }
     }
 
+    public void OnClickButtonBuy()
+    {
+        if (ButtonBuy.interactable)
+        {
+            IsClickedBuy = true;
+        }
+    }
+
     public void OnTriggerExit(Collider other)
     {
         ButtonEO.SetActive(false);
+        ButtonBuyO.SetActive(false);
     }
 }

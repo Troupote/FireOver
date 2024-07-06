@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
-  m_Name: StoneSO
+  m_Script: {fileID: 11500000, guid: 4f07a6a2756110c49b07e083c77f3e35, type: 3}
+  m_Name: CrusherSO
   m_EditorClassIdentifier: 
-  objectName: Stone
+  objectName: Crusher
+  SOprefab: {fileID: 11400000, guid: 047f79797898074458de7793e45c2edb, type: 2}
   objectPrefab: {fileID: 8193444738010508577, guid: 7110048997eb6e5419ae972e7d1dd93c,
     type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectImage: {fileID: 21300000, guid: e8c63e1609f33184ea8cbee9667182e2, type: 3}
+  ObjectImage: {fileID: 0}

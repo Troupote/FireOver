@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 7731458539384065210}
   - component: {fileID: 4545852040629811960}
   - component: {fileID: -8245673106397018589}
+  - component: {fileID: -1576148796777806094}
   m_Layer: 0
   m_Name: broyeur + smoke2
   m_TagString: Untagged
@@ -236,7 +237,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6275935, y: 2.337695, z: 3.525496}
+  m_Size: {x: 10, y: 3, z: 10}
   m_Center: {x: 0.08627623, y: 1.1416494, z: 0.018628597}
 --- !u!54 &4545852040629811960
 Rigidbody:
@@ -277,6 +278,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45557b414d536914bb6b80589e1b42c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1576148796777806094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885130358725764896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7f95a810cb0fe449392c74d5e52f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMachineScriptableObject: {fileID: 11400000, guid: a3952a037e25ad74e891833876d536dc,
+    type: 2}
 --- !u!1 &2120336220401399227
 GameObject:
   m_ObjectHideFlags: 0

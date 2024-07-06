@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: ChickenSO
-  m_EditorClassIdentifier: Assembly-CSharp::ChickenScriptableObject
-  objectName: Chicken
-  objectPrefab: {fileID: 0}
+  m_Name: OvenSO
+  m_EditorClassIdentifier: Assembly-CSharp::OvenScriptableObject
+  objectName: Oven
+  SOprefab: {fileID: 11400000, guid: 606c57a1678ef3a4b8b25c0ae6da729e, type: 2}
+  objectPrefab: {fileID: 8193444738010508577, guid: 7110048997eb6e5419ae972e7d1dd93c,
+    type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectImage: {fileID: 21300000, guid: 57b2d7ed7ae0197459dd9a89df11dc02, type: 3}
+  ObjectImage: {fileID: 0}

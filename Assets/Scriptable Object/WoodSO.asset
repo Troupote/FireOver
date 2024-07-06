@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: WoodSO
   m_EditorClassIdentifier: Assembly-CSharp::WoodScriptableObject
-  objectName: 
+  objectName: Wood
+  objectPrefab: {fileID: 0}
   objectValue: 0
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectImage: {fileID: 0}
+  objectColor: {r: 0, g: 0.6150943, b: 0.12103574, a: 0}
+  ObjectImage: {fileID: 21300000, guid: 2c89d5bcb3b58394c9f5ca3e612afc06, type: 3}
