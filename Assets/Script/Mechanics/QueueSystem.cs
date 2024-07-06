@@ -3,31 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QueueSystem<T> : MonoBehaviour
+public class QueueSystem : MonoBehaviour
 {
-    private LinkedList<T> _items = new LinkedList<T>();
+    private LinkedList <QueueSystem> _items = new LinkedList<QueueSystem>();
 
     // Ajouter un élément à la queue
-    public void Enqueue(T item)
+    public void Enqueue(QueueSystem item)
     {
         _items.AddLast(item);
     }
 
     // Retirer un élément de la queue
-    public T Dequeue()
+    public QueueSystem Dequeue()
     {
         if (_items.Count == 0)
         {
             throw new InvalidOperationException("La queue est vide.");
         }
 
-        T value = _items.First.Value;
+        QueueSystem value = _items.First.Value;
         _items.RemoveFirst();
         return value;
     }
 
     // Obtenir l'élément en tête de la queue sans le retirer
-    public T Peek()
+    public QueueSystem Peek()
     {
         if (_items.Count == 0)
         {
@@ -49,7 +49,7 @@ public class QueueSystem<T> : MonoBehaviour
         return _items.Count;
     }
 
-    public QueueSystem<T> Clear()
+    public QueueSystem Clear()
     {
         _items.Clear();
         return this;
