@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class PlayerCollect : MonoBehaviour
 {
     public GameObject[] imageObjects;
-    private int i = 0;
+    
     public Button ButtonE;
     public GameObject ButtonEO;
 
@@ -12,6 +12,8 @@ public class PlayerCollect : MonoBehaviour
     public GameObject ButtonBuyO;
     private bool IsClicked = false;
     private bool IsClickedBuy = false;
+
+    private int i = 0;
     public Inventory inventory;
 
     void Start()
@@ -44,6 +46,7 @@ public class PlayerCollect : MonoBehaviour
 
                     Destroy(other.gameObject); // Détruire l'objet collecté
                     ButtonEO.SetActive(false);
+                    
                 }
             }
             else
@@ -70,13 +73,23 @@ public class PlayerCollect : MonoBehaviour
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
                         inventory.RemoveItem(MachinescriptableObject.SOprefab);
-                        foreach (var elem in imageObjects)
+                        int j = 0;
+                        for(int k = 0;k < imageObjects.Length; k++)
                         {
-                            if(elem.GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
+                            if(imageObjects[k].GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
                             {
-                                elem.GetComponent<Image>().sprite = null;
+                                while (j<5)
+                                {
+                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                   imageObjects[j].GetComponent<Image>().sprite = null;
+                                }
                                 break;
                             }
+                            j++;
                             
                         }
                         

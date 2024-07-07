@@ -5360,5 +5360,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7f95a810cb0fe449392c74d5e52f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMachineScriptableObject: {fileID: 11400000, guid: 4bb411d3a4277da4d8166531e6623da5,
+  myMachineScriptableObject: {fileID: 11400000, guid: 06c416e9d0b29b54597d5f3206e44bea,
     type: 2}

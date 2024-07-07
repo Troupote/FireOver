@@ -551,6 +551,12 @@ PrefabInstance:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 6706995368797469281}
+    - target: {fileID: 3726816941509845061, guid: 12b88de30532d5340bfc2ffa4c49138d,
+        type: 3}
+      propertyPath: myScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7,
+        type: 2}
     - target: {fileID: 4328409650841846004, guid: 12b88de30532d5340bfc2ffa4c49138d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -571,6 +577,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Other
       objectReference: {fileID: 0}
+    - target: {fileID: 5668641574184505260, guid: 12b88de30532d5340bfc2ffa4c49138d,
+        type: 3}
+      propertyPath: myScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34,
+        type: 2}
     - target: {fileID: 5757911068594610281, guid: 12b88de30532d5340bfc2ffa4c49138d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -731,6 +743,12 @@ PrefabInstance:
       propertyPath: imageObjects.Array.data[5]
       value: 
       objectReference: {fileID: 2245143786345580195}
+    - target: {fileID: 8426276616410302013, guid: 12b88de30532d5340bfc2ffa4c49138d,
+        type: 3}
+      propertyPath: myScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

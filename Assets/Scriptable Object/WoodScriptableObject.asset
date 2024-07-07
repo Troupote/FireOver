@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: WoodSO
+  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
+  m_Name: WoodScriptableObject
   m_EditorClassIdentifier: Assembly-CSharp::WoodScriptableObject
   objectName: Wood
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 8193444738010508577, guid: 7110048997eb6e5419ae972e7d1dd93c,
+    type: 3}
   objectValue: 0
-  objectColor: {r: 0, g: 0.6150943, b: 0.12103574, a: 0}
+  objectColor: {r: 0, g: 0, b: 0, a: 0}
   ObjectImage: {fileID: 21300000, guid: 2c89d5bcb3b58394c9f5ca3e612afc06, type: 3}

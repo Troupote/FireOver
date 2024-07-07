@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7f95a810cb0fe449392c74d5e52f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myMachineScriptableObject: {fileID: 11400000, guid: a3952a037e25ad74e891833876d536dc,
+  myMachineScriptableObject: {fileID: 11400000, guid: 120a176985b41ef46921242c93d58898,
     type: 2}
 --- !u!1 &2120336220401399227
 GameObject:

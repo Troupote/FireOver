@@ -8,14 +8,17 @@ public class StoneMyScriptableObject : BaseScriptableObject
 
 }
 
-[CreateAssetMenu(fileName = "NewWoodScriptableObject", menuName = "ScriptableObjects/WoodScriptableObject", order = 2)]
-public class WoodScriptableObject : BaseScriptableObject
-{
+// [CreateAssetMenu(fileName = "NewWoodScriptableObject", menuName = "ScriptableObjects/WoodScriptableObject", order = 2)]
+// public class WoodScriptableObject : BaseScriptableObject
+// {
 
-}
+// }
 
-[CreateAssetMenu(fileName = "NewChickenScriptableObject", menuName = "ScriptableObjects/ChickenScriptableObject", order = 3)]
-public class ChickenScriptableObject : BaseScriptableObject
-{
 
-}
+
+// [CreateAssetMenu(fileName = "NewChickenScriptableObject", menuName = "ScriptableObjects/ChickenScriptableObject", order = 3)]
+// public class ChickenScriptableObject : BaseScriptableObject
+// {
+
+// }
+
