@@ -35,15 +35,13 @@ public class Treatment : MonoBehaviour
         while (Queue.Count > 0)
         {
             BaseScriptableObject Temp = Queue[0];
-            
-
-            Queue.RemoveAt(0);
 
             GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
 
             yield return new WaitForSeconds(2);
 
             Destroy(ObjectToSpawn);
+            Queue.RemoveAt(0);
 
             yield return new WaitForSeconds(2);
 
