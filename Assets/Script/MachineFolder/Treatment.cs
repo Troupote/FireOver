@@ -16,10 +16,12 @@ public class Treatment : MonoBehaviour
 
     public void AddQueue(GameObject Item)
     {
-        if (Queue.Count > 0)
+        if (Queue.Count == 0)
         {
             Queue.Add(Item);
-            Treat();
+            
+            StartCoroutine(Treat());
+ 
         }
         else
         {
@@ -29,17 +31,20 @@ public class Treatment : MonoBehaviour
 
     public IEnumerator Treat()
     {
-        if (Queue.Count > 0)
+
+        while (Queue.Count > 0)
         {
             GameObject Temp = Queue[0];
+            
 
             Queue.RemoveAt(0);
 
-            yield return new WaitForSeconds(2);
-
             GameObject ObjectToSpawn = Instantiate(Temp,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
 
-            Treat();
+            yield return new WaitForSeconds(2);
+
+            Destroy(ObjectToSpawn);
+
 
         }
     }

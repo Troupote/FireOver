@@ -19,9 +19,14 @@ public class NewBehaviourScript : MonoBehaviour
     // Définir la coroutine
     IEnumerator Heater()
     {
-        HeatText.text = HeatValue.ToString() + " °C";
-        HeatValue += 0.1f;
-        yield return new WaitForSeconds(1f);
+        while (true)
+        {
+            HeatText.text = HeatValue.ToString("F2") + " °C";
+
+            HeatValue -= 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+
 
     }
 }

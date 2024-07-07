@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 4545852040629811960}
   - component: {fileID: -8245673106397018589}
   - component: {fileID: -1576148796777806094}
+  - component: {fileID: 6082742558133332708}
   m_Layer: 0
   m_Name: broyeur + smoke2
   m_TagString: Untagged
@@ -293,6 +294,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMachineScriptableObject: {fileID: 11400000, guid: 120a176985b41ef46921242c93d58898,
     type: 2}
+--- !u!114 &6082742558133332708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885130358725764896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1585670ecc684af488ce7b0c7b910f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2120336220401399227
 GameObject:
   m_ObjectHideFlags: 0

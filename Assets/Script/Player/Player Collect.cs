@@ -65,44 +65,48 @@ public class PlayerCollect : MonoBehaviour
                 
                 ButtonBuyO.SetActive(true);
 
-                if (IsClickedBuy && inventory.items.Contains(MachinescriptableObject.SOprefab))
+                if (IsClickedBuy )
                 {
-                    IsClickedBuy = false;
-                    treatment.AddQueue(MachinescriptableObject.SOprefab.objectPrefab);
-                    //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
-                    
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
-                        inventory.RemoveItem(MachinescriptableObject.SOprefab);
-                        int j = 0;
-                        for(int k = 0;k < imageObjects.Length; k++)
-                        {
-                            if(imageObjects[k].GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                   imageObjects[j].GetComponent<Image>().sprite = null;
-                                   i--;
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                        
-                        Debug.Log("trouvé");
-                    }
-                    else
-                    {
-                        Debug.Log("pas trouvé");
-                    }
 
-                    ButtonBuyO.SetActive(false);
+                        IsClickedBuy = false;
+                        treatment.AddQueue(MachinescriptableObject.SOprefab.objectPrefab);
+                        //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
+                        
+                        if(inventory.items.Contains(MachinescriptableObject.SOprefab))
+                        {
+                            inventory.RemoveItem(MachinescriptableObject.SOprefab);
+                            int j = 0;
+                            for(int k = 0;k < imageObjects.Length; k++)
+                            {
+                                if(imageObjects[k].GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
+                                {
+                                    while (j<5)
+                                    {
+                                        imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                                        j++;
+                                    }
+                                    if(j==5)
+                                    {
+                                    imageObjects[j].GetComponent<Image>().sprite = null;
+                                    i--;
+                                    }
+                                    break;
+                                }
+                                j++;
+                                
+                            }
+                            
+                            Debug.Log("trouvé");
+                        }
+                        else
+                        {
+                            Debug.Log("pas trouvé");
+                        }
+
+                        ButtonBuyO.SetActive(false);
+                    }
                 }
             }
 

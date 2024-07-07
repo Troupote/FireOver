@@ -5258,6 +5258,7 @@ GameObject:
   - component: {fileID: 2592636668986933337}
   - component: {fileID: 7993553878002982690}
   - component: {fileID: 8831013930762008284}
+  - component: {fileID: 6676417936198735208}
   m_Layer: 0
   m_Name: four + smoke2
   m_TagString: Untagged
@@ -5363,6 +5364,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMachineScriptableObject: {fileID: 11400000, guid: 06c416e9d0b29b54597d5f3206e44bea,
     type: 2}
+--- !u!114 &6676417936198735208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126507976065208448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1585670ecc684af488ce7b0c7b910f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1083627179355651012
 PrefabInstance:
   m_ObjectHideFlags: 0
