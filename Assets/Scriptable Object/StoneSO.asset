@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StoneSO
   m_EditorClassIdentifier: 
   objectName: Stone
-  objectPrefab: {fileID: 8193444738010508577, guid: 7110048997eb6e5419ae972e7d1dd93c,
+  objectPrefab: {fileID: 919132149155446097, guid: fc6193d52681c0a489d31bf5ea700524,
     type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
