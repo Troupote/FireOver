@@ -23,7 +23,7 @@ public class PlayerCollect : MonoBehaviour
     {
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
-        Menu.SetActive(false);
+        Menu.SetActive(true);
     }
 
     public void OnTriggerStay(Collider other)

@@ -10,9 +10,34 @@ public class MenuDisplay : MonoBehaviour
     public GameObject PanelPrefab;
     private List<GameObject> panels = new List<GameObject>();
 
+
+
+
     void Start()
     {
+        Debug.Log("=================================================================");
         for (int i = 0; i < RecipeScriptableObject.Length; i++)
+        {
+            GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
+            newPanel.transform.SetParent(Menu.transform, false);
+            panels.Add(newPanel);
+            Text a = newPanel.GetComponentInChildren<Text>();
+            a.text = "feur";
+            Debug.Log(Menu.transform);
+        }
+        Debug.Log("=================================================================");
+        /*
+         *         Debug.Log("=================================================================");
+
+        foreach (var RS in RecipeScriptableObject)
+        {
+            GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
+            newPanel.transform.SetParent(Menu.transform, false);
+            panels.Add(newPanel);
+            Debug.Log(RS.recipeName);
+        }
+         * 
+         * for (int i = 0; i < RecipeScriptableObject.Length; i++)
         {
             GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
             newPanel.transform.SetParent(Menu.transform, false);
@@ -32,6 +57,6 @@ public class MenuDisplay : MonoBehaviour
                 elem.sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
                 j++;
             }
-        }
+        }*/
     }
 }
