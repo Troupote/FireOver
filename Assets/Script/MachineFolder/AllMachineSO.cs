@@ -13,3 +13,4 @@ public class OvenScriptableObject : MachineScriptableObject
 {
 
 }
+
