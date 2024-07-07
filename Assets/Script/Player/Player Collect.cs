@@ -71,7 +71,7 @@ public class PlayerCollect : MonoBehaviour
                     {
 
                         IsClickedBuy = false;
-                        treatment.AddQueue(MachinescriptableObject.SOprefab.objectPrefab);
+                        treatment.AddQueue(MachinescriptableObject.SOprefab);
                         //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
                         
                         if(inventory.items.Contains(MachinescriptableObject.SOprefab))

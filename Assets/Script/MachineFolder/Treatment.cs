@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Treatment : MonoBehaviour 
 {
-    private List<GameObject> Queue = new List<GameObject>();
+    private List<BaseScriptableObject> Queue = new List<BaseScriptableObject>();
     private IEnumerator enumerator;
 
 
@@ -14,7 +14,7 @@ public class Treatment : MonoBehaviour
         enumerator = Treat();
     }
 
-    public void AddQueue(GameObject Item)
+    public void AddQueue(BaseScriptableObject Item)
     {
         if (Queue.Count == 0)
         {
@@ -34,16 +34,18 @@ public class Treatment : MonoBehaviour
 
         while (Queue.Count > 0)
         {
-            GameObject Temp = Queue[0];
+            BaseScriptableObject Temp = Queue[0];
             
 
             Queue.RemoveAt(0);
 
-            GameObject ObjectToSpawn = Instantiate(Temp,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
+            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
 
             yield return new WaitForSeconds(2);
 
             Destroy(ObjectToSpawn);
+
+            yield return new WaitForSeconds(2);
 
 
         }
