@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5538473505179287624}
-  - component: {fileID: 4764818664861984296}
   m_Layer: 0
   m_Name: BigStonePrefab
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   - {fileID: 5306735399190754073}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4764818664861984296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4552145353919979865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afd6afb1e323b49829702ff8fe1ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myScriptableObject: {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
 --- !u!1001 &5633992996903720178
 PrefabInstance:
   m_ObjectHideFlags: 0

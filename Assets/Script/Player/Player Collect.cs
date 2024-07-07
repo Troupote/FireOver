@@ -28,9 +28,11 @@ public class PlayerCollect : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
+        
         ObjectWithSO objectWithSO = other.GetComponent<ObjectWithSO>();
         if (objectWithSO != null)
         {
+            
             BaseScriptableObject scriptableObject = objectWithSO.myScriptableObject;
             
             if ( scriptableObject.objectName.Length > 0 )
@@ -74,7 +76,7 @@ public class PlayerCollect : MonoBehaviour
 
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
-
+                        Debug.Log("ok bozo");
                         IsClickedBuy = false;
                         Menu.SetActive(true);
                         treatment.AddQueue(MachinescriptableObject.SOprefab);
