@@ -16,7 +16,15 @@ public class Treatment : MonoBehaviour
 
     public void AddQueue(GameObject Item)
     {
-        Queue.Add(Item);
+        if (Queue.Count > 0)
+        {
+            Queue.Add(Item);
+            Treat();
+        }
+        else
+        {
+            Queue.Add(Item);
+        }
     }
 
     public IEnumerator Treat()
@@ -30,6 +38,8 @@ public class Treatment : MonoBehaviour
             yield return new WaitForSeconds(2);
 
             GameObject ObjectToSpawn = Instantiate(Temp,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
+
+            Treat();
 
         }
     }
