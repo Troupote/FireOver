@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 961739751}
   - component: {fileID: 961739750}
   - component: {fileID: 961739754}
-  - component: {fileID: 961739755}
+  - component: {fileID: 961739756}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -852,12 +852,12 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 1
-  m_ShowCustomSorter: 1
+  m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &961739755
+--- !u!114 &961739756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -866,14 +866,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 961739749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: aad79b30b48ba3746a34d4dd11893fc9, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
+  m_IsGlobal: 1
   priority: 0
+  blendDistance: 0
+  weight: 0.581
+  sharedProfile: {fileID: 11400000, guid: 4a9c7a1dd8e3c05409f0cdc8a4d01091, type: 2}
 --- !u!1 &996055496
 GameObject:
   m_ObjectHideFlags: 0
