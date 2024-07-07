@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-public class NewBehaviourScript : MonoBehaviour
+public class loot_item : MonoBehaviour
 {
     public GameObject[] lootPrefab;
 

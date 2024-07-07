@@ -58,17 +58,18 @@ public class PlayerCollect : MonoBehaviour
         if (MachineobjectWithSO != null)
         {
             MachineScriptableObject MachinescriptableObject = MachineobjectWithSO.myMachineScriptableObject;
-            
+            Treatment treatment = other.GetComponent<Treatment>(); 
             
             if ( MachinescriptableObject.objectName.Length > 0 )
             {
                 
                 ButtonBuyO.SetActive(true);
 
-                if (IsClickedBuy)
+                if (IsClickedBuy && inventory.items.Contains(MachinescriptableObject.SOprefab))
                 {
                     IsClickedBuy = false;
-                    GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
+                    treatment.AddQueue(MachinescriptableObject.SOprefab.objectPrefab);
+                    //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
                     
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
@@ -86,6 +87,7 @@ public class PlayerCollect : MonoBehaviour
                                 if(j==5)
                                 {
                                    imageObjects[j].GetComponent<Image>().sprite = null;
+                                   i--;
                                 }
                                 break;
                             }
