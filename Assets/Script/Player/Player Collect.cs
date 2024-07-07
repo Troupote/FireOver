@@ -13,6 +13,9 @@ public class PlayerCollect : MonoBehaviour
     private bool IsClicked = false;
     private bool IsClickedBuy = false;
 
+    public GameObject Menu;
+    public Button ButtonMenu;
+
     private int i = 0;
     public Inventory inventory;
 
@@ -20,6 +23,7 @@ public class PlayerCollect : MonoBehaviour
     {
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
+        Menu.SetActive(false);
     }
 
     public void OnTriggerStay(Collider other)
@@ -67,10 +71,12 @@ public class PlayerCollect : MonoBehaviour
 
                 if (IsClickedBuy )
                 {
+
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
 
                         IsClickedBuy = false;
+                        Menu.SetActive(true);
                         treatment.AddQueue(MachinescriptableObject.SOprefab);
                         //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
                         
@@ -129,6 +135,17 @@ public class PlayerCollect : MonoBehaviour
             IsClickedBuy = true;
         }
     }
+
+    
+    public void OnClickButtonMenu()
+    {
+        if (ButtonMenu.interactable)
+        {
+            Menu.SetActive(false);
+
+        }
+    }
+
 
     public void OnTriggerExit(Collider other)
     {
