@@ -9,10 +9,15 @@ public class HeatSystem : MonoBehaviour
 {
 
     public float WorldHeatValue = 15;
+    public float MultiplyHeatValue = 2.0f;
     public Text HeatText;
     public float PlayerHeatValue = 0;
     public MeshRenderer SnowMesh;
     private Material SnowMaterial;
+    public Button buttonHeat;
+    public loot_item loot_item;
+
+    private bool Active;
 
     void Start()
     {
@@ -44,8 +49,33 @@ public class HeatSystem : MonoBehaviour
 
             Debug.Log("Ammo left: " + tmp, this);
             HeatText.text = tmp.ToString("F2") + " °C";
-            WorldHeatValue -= 0.1f;
+            WorldHeatValue -= 0.1f*MultiplyHeatValue;
             yield return new WaitForSeconds(0.1f);
         }
     }
-}
+
+    public void OnClickButtonHeat()
+    {
+        if(Active)
+        {
+            if(buttonHeat.interactable)
+            {
+                MultiplyHeatValue ++;
+                Active = false;
+                loot_item.Creation();
+                
+            }
+        }
+
+    }
+
+    IEnumerator timeHazard()
+    {
+        while(true)
+        {
+            Active = true;
+            yield return new WaitForSeconds(60f);
+        }
+    }
+
+}   

@@ -8,6 +8,7 @@ public class PlayerCollect : MonoBehaviour
     
     public Button ButtonE;
     public GameObject ButtonEO;
+    public Button buttonTrash;
 
     public Button ButtonBuy;
     public GameObject ButtonBuyO;
@@ -160,12 +161,14 @@ public class PlayerCollect : MonoBehaviour
     {
         if(buttonTrash.interactable)
         {
-            inventory.RemoveItem();
+
+            inventory.RemoveItem(inventory.items[inventory.items.Count-1]);
+
                                             
             int j = 0;
             for(int k = 0;k < imageObjects.Length; k++)
             {
-                if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                if(imageObjects[k].GetComponent<Image>().sprite.name == inventory.items[inventory.items.Count-1].objectName)
                 {
                     while (j<5)
                     {
