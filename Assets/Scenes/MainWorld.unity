@@ -2006,6 +2006,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441253363}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButtonHeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HeatSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1612867733664984710, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2576,6 +2611,18 @@ PrefabInstance:
       addedObject: {fileID: 1295235144}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21358daefb7c83488252fd39a59731a, type: 3}
+--- !u!114 &1372912503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1235717312737664546, guid: e21358daefb7c83488252fd39a59731a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1372912502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1417678455 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6442700408180218250, guid: e21358daefb7c83488252fd39a59731a,
@@ -2609,6 +2656,7 @@ MonoBehaviour:
   - {fileID: 1655782783}
   ButtonE: {fileID: 1563895532}
   ButtonEO: {fileID: 1563895530}
+  buttonTrash: {fileID: 0}
   ButtonBuy: {fileID: 1468761150}
   ButtonBuyO: {fileID: 1468761148}
   Menu: {fileID: 1550167168}
@@ -2644,9 +2692,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WorldHeatValue: 0
+  MultiplyHeatValue: 2
   HeatText: {fileID: 53775805}
   PlayerHeatValue: 0
   SnowMesh: {fileID: 1913490542}
+  buttonHeat: {fileID: 1372912503}
+  loot_item: {fileID: 1842159222}
 --- !u!1 &1452595113
 GameObject:
   m_ObjectHideFlags: 0
