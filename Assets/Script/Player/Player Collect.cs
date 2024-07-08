@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerCollect : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class PlayerCollect : MonoBehaviour
     public Inventory inventory;
 
     private RecipesSO[] RecipeScriptableObject;
+    private List<BaseScriptableObject> RecipeS0Copy = new List<BaseScriptableObject> (); 
+
+    private RecipesSO RecipeSo;
 
     void Start()
     {
@@ -43,6 +47,7 @@ public class PlayerCollect : MonoBehaviour
             
             if ( scriptableObject.objectName.Length > 0 )
             {
+
                 ButtonEO.SetActive(true);
 
                 if (IsClicked)
@@ -85,51 +90,16 @@ public class PlayerCollect : MonoBehaviour
                 if (IsClickedBuy )
                 {
 
-                    if(inventory.items.Contains(MachinescriptableObject.SOprefab))
-                    {
+                    IsClickedBuy = false;
 
+                    menuDisplay.Clicked();
+                    Menu.SetActive(true);
+                    
+                    //treatment.AddQueue(MachinescriptableObject.SOprefab);
+                    //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
 
-                        IsClickedBuy = false;
- 
-                        menuDisplay.Clicked();
-                        Menu.SetActive(true);
-                        
-                        //treatment.AddQueue(MachinescriptableObject.SOprefab);
-                        //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
-                        
-                        if(inventory.items.Contains(MachinescriptableObject.SOprefab))
-                        {
-                            inventory.RemoveItem(MachinescriptableObject.SOprefab);
-                            int j = 0;
-                            for(int k = 0;k < imageObjects.Length; k++)
-                            {
-                                if(imageObjects[k].GetComponent<Image>().sprite.name == MachinescriptableObject.SOprefab.objectName)
-                                {
-                                    while (j<5)
-                                    {
-                                        imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                                        j++;
-                                    }
-                                    if(j==5)
-                                    {
-                                    imageObjects[j].GetComponent<Image>().sprite = null;
-                                    i--;
-                                    }
-                                    break;
-                                }
-                                j++;
-                                
-                            }
-                            
-                            Debug.Log("trouvé");
-                        }
-                        else
-                        {
-                            Debug.Log("pas trouvé");
-                        }
-
-                        ButtonBuyO.SetActive(false);
-                    }
+                    ButtonBuyO.SetActive(false);
+                    
                 }
             }
 
@@ -173,16 +143,56 @@ public class PlayerCollect : MonoBehaviour
     {
         if (Button1.interactable)
         {
+            RecipeSo = RecipeScriptableObject[0];
             if(RecipeScriptableObject.Length>0)
             {
-                int i = 0;
+                Debug.Log("Recipe checked");
+                int p = 0;
                 foreach(var elem in RecipeScriptableObject[0].Input)
                 {
                     if(!inventory.items.Contains(elem))
                     {
-                        i++;
+                        p++;
+                    }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
+
+                }
+                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
+                {
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < imageObjects.Length; k++)
+                        {
+                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                imageObjects[j].GetComponent<Image>().sprite = null;
+                                i--;
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
                     }
                 }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
+                }               
                 if(i==0 && protocoleiNSHALLAH)
                 {
                     protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
@@ -196,15 +206,56 @@ public class PlayerCollect : MonoBehaviour
     {
         if (Button2.interactable)
         {
+            RecipeSo = RecipeScriptableObject[1];
             if(RecipeScriptableObject.Length>0)
             {
-                int i = 0;
+                int p = 0;
                 foreach(var elem in RecipeScriptableObject[1].Input)
                 {
                     if(!inventory.items.Contains(elem))
                     {
-                        i++;
+                        p++;
                     }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
+                }
+                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
+                {
+
+                
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < imageObjects.Length; k++)
+                        {
+                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                imageObjects[j].GetComponent<Image>().sprite = null;
+                                i--;
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    
+                    }
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
                 }
                 if(i==0 && protocoleiNSHALLAH)
                 {
@@ -218,15 +269,58 @@ public class PlayerCollect : MonoBehaviour
     {
         if (Button3.interactable)
         {
+            RecipeSo = RecipeScriptableObject[2];
             if(RecipeScriptableObject.Length>0)
             {
-                int i = 0;
+                int p = 0;
                 foreach(var elem in RecipeScriptableObject[2].Input)
-                {
+                {   
                     if(!inventory.items.Contains(elem))
                     {
-                        i++;
+                        p++;
                     }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
+                }
+                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
+                {
+                    foreach(var elem in RecipeS0Copy)
+                    {
+
+
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < imageObjects.Length; k++)
+                        {
+                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                imageObjects[j].GetComponent<Image>().sprite = null;
+                                i--;
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    
+                
+                    }
+                
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
                 }
                 if(i==0 && protocoleiNSHALLAH)
                 {
@@ -235,6 +329,5 @@ public class PlayerCollect : MonoBehaviour
             }
         }
     }
+}   
 
-    
-}

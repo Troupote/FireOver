@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Pickaxe
   Input:
-  - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
+  - {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
   - {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
   - {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
   PrefabOutput: {fileID: 0}

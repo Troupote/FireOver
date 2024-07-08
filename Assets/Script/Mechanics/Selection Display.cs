@@ -46,7 +46,7 @@ public class Target : MonoBehaviour
                 {
                     realPosition = new Vector3((int)mousePositionOnPlane.x, mousePositionOnPlane.y + 0.3f, (int)mousePositionOnPlane.z);
                     PlaneSelection = Instantiate(Plane, realPosition, Quaternion.identity);
-                    Debug.Log("Créer");
+
                     Created = true;
                 }
                 else
@@ -61,7 +61,7 @@ public class Target : MonoBehaviour
                     MachineCreated = false;
                 }
 
-                Debug.Log("Position de la souris sur le plan : " + realPosition);
+               
             }
         }
     }
@@ -85,10 +85,10 @@ public class Target : MonoBehaviour
             {
                 GameObject Machine = Instantiate(Oven[0], realPosition, Quaternion.identity);
                 MachineCreated = true;
-                Debug.Log("Créer machine");
+
             }
             {
-                Debug.Log("Pas Créer machine");
+
             }
         }
 
@@ -101,10 +101,10 @@ public class Target : MonoBehaviour
             {
                 GameObject Machine = Instantiate(Oven[1], realPosition, Quaternion.identity);
                 MachineCreated = true;
-                Debug.Log("Créer machine");
+
             }
             {
-                Debug.Log("Pas Créer machine");
+
             }
         }
 
@@ -117,10 +117,10 @@ public class Target : MonoBehaviour
             {
                 GameObject Machine = Instantiate(Oven[2], realPosition, Quaternion.identity);
                 MachineCreated = true;
-                Debug.Log("Créer machine");
+
             }
             {
-                Debug.Log("Pas Créer machine");
+ 
             }
         }
 
@@ -133,10 +133,10 @@ public class Target : MonoBehaviour
             {
                 GameObject Machine = Instantiate(Oven[3], realPosition, Quaternion.identity);
                 MachineCreated = true;
-                Debug.Log("Créer machine");
+
             }
             {
-                Debug.Log("Pas Créer machine");
+
             }
         }
 

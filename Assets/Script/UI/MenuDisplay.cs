@@ -67,7 +67,7 @@ public class MenuDisplay : MonoBehaviour
                     if (j < RecipeScriptableObject[i].Input.Length)
                     {
                         panelsImages[j].sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
-                        Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
+                        //Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
                     }
                     else
                     {

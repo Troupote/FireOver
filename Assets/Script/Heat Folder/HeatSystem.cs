@@ -31,7 +31,7 @@ public class HeatSystem : MonoBehaviour
         while (true)
         {
             float tmp = PlayerHeatValue + WorldHeatValue;
-            Debug.Log("Ammo left: " + tmp, this);
+            // Debug.Log("Ammo left: " + tmp, this);
             HeatText.text = tmp.ToString("F2") + " °C";
             WorldHeatValue -= 0.1f;
             yield return new WaitForSeconds(1.0f);

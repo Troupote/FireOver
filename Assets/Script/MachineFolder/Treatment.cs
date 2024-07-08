@@ -19,7 +19,8 @@ public class Treatment : MonoBehaviour
         foreach(BaseScriptableObject elem in Item.Input)
         {
             AddQueueObject(elem);
-            Debug.Log("AddQueue");
+            
+            
         }
     }
 
@@ -28,6 +29,7 @@ public class Treatment : MonoBehaviour
         if (Queue.Count == 0)
         {
             Queue.Add(Item);
+            
             
             StartCoroutine(Treat());
  
@@ -46,6 +48,7 @@ public class Treatment : MonoBehaviour
             BaseScriptableObject Temp = Queue[0];
 
             GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
+            Debug.Log("Temp created");
 
             yield return new WaitForSeconds(2);
 
