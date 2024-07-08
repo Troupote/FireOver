@@ -11,8 +11,13 @@ public class loot_item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        for (int i = 0; i<19 ;i++)
+        Creation();
+
+    }
+
+    public void Creation()
+    {
+        for (int i = 0; i<30 ;i++)
         {
             Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-10,10),0,UnityEngine.Random.Range(-10,10));
             GameObject newLoots = Instantiate(lootPrefab[i%(lootPrefab.Length)], randomPosition, Quaternion.identity);

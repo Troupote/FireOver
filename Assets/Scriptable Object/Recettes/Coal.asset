@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
-  m_Name: PickaxeRecipe
+  m_Name: Coal
   m_EditorClassIdentifier: 
-  recipeName: Pickaxe
+  recipeName: Coal
   Input:
-  - {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
   - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
+  - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
+  - {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
   PrefabOutput: {fileID: 0}

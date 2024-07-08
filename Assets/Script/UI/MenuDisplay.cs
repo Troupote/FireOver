@@ -24,18 +24,6 @@ public class MenuDisplay : MonoBehaviour
         Transform view = CraftingMenuPanel.transform.Find("View");
         Transform content = view.transform.Find("Content");
 
-        if (content == null)
-        {
-            Debug.LogError("GameObject 'content' not found.");
-            return;
-        }
-        
-        // Ensure RecipeScriptableObject and panels arrays have matching lengths
-        if (RecipeScriptableObject.Length != panels.Length)
-        {
-            Debug.LogError("Mismatch between RecipeScriptableObject and panels array lengths.");
-            return;
-        }
 
         for (int i = 0; i < panels.Length; i++)
         {
@@ -80,6 +68,6 @@ public class MenuDisplay : MonoBehaviour
 
     }
 
-
     
+
 }
