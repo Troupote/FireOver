@@ -129,6 +129,21 @@ public class PlayerCollect : MonoBehaviour
         if (ButtonMenu.interactable)
         {
             Menu.SetActive(false);
+            GameObject selectionPanel = GameObject.Find("Canvas");
+            Transform CraftingMenu = selectionPanel.transform.Find("CraftingMenu");
+            Transform CraftingMenuPanel = CraftingMenu.transform.Find("Crafting Menu Panel");
+            Transform view = CraftingMenuPanel.transform.Find("View");
+            Transform content = view.transform.Find("Content");
+            foreach (Transform child in content)
+            {
+                // Si le nom de l'enfant contient "Panel", détruit l'objet
+                if (child.name.Contains("Panel"))
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+
+
         }
     }
 
