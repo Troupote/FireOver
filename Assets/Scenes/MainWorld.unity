@@ -1540,6 +1540,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: broyeur + smoke2
       objectReference: {fileID: 0}
+    - target: {fileID: 6682319554536084201, guid: 390c3a09ff9394648870171ca17a6f24,
+        type: 3}
+      propertyPath: m_ApplyActiveColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7731458539384065210, guid: 390c3a09ff9394648870171ca17a6f24,
         type: 3}
       propertyPath: m_Size.x
@@ -2632,6 +2637,7 @@ MonoBehaviour:
   WorldHeatValue: 0
   HeatText: {fileID: 53775805}
   PlayerHeatValue: 0
+  SnowMesh: {fileID: 1913490542}
 --- !u!1 &1452595113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3599,6 +3605,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1082010623}
   m_SourcePrefab: {fileID: 100100000, guid: 20fff2eae25279f40836387c197aa8eb, type: 3}
+--- !u!23 &1913490542 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 20fff2eae25279f40836387c197aa8eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1913490541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1937020002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,7 +3939,7 @@ PrefabInstance:
     - target: {fileID: 1140291899215509010, guid: 741166f358efc4949834cad1f69b9185,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46
+      value: -0.022
       objectReference: {fileID: 0}
     - target: {fileID: 1140291899215509010, guid: 741166f358efc4949834cad1f69b9185,
         type: 3}
