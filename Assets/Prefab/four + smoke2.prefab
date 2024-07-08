@@ -5396,8 +5396,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
   panels:
   - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
-  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
-  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
+  - {fileID: 755391834915184437, guid: b352e28dfbb524e4f9c56554674879d9, type: 3}
+  - {fileID: 755391834915184437, guid: a88037cd8a4214d4b855cfd51aba2198, type: 3}
+  treatment: {fileID: 6676417936198735208}
+  Button1: {fileID: 7057012770260402909, guid: c281565af5a403c4ea1ed9e7fc0ce3bf, type: 3}
+  Button2: {fileID: 7057012770260402909, guid: fb1e6323c7b3a7542a5dca1779501548, type: 3}
+  Button3: {fileID: 7057012770260402909, guid: 5fbba65f3f3f60f4b94a6b3612fc26fd, type: 3}
+  inventory: {fileID: 3031450353311484477, guid: be7f8e45b6c64764589238f8486093af,
+    type: 3}
+  MachineobjectWithSO: {fileID: 8831013930762008284}
 --- !u!1001 &1083627179355651012
 PrefabInstance:
   m_ObjectHideFlags: 0

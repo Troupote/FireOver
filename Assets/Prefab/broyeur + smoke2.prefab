@@ -332,7 +332,8 @@ MonoBehaviour:
   Button1: {fileID: 7057012770260402909, guid: c281565af5a403c4ea1ed9e7fc0ce3bf, type: 3}
   Button2: {fileID: 7057012770260402909, guid: fb1e6323c7b3a7542a5dca1779501548, type: 3}
   Button3: {fileID: 7057012770260402909, guid: 5fbba65f3f3f60f4b94a6b3612fc26fd, type: 3}
-  inventory: {fileID: 0}
+  inventory: {fileID: 3031450353311484477, guid: be7f8e45b6c64764589238f8486093af,
+    type: 3}
   MachineobjectWithSO: {fileID: -1576148796777806094}
 --- !u!1 &2120336220401399227
 GameObject:

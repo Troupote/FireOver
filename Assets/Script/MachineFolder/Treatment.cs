@@ -19,6 +19,7 @@ public class Treatment : MonoBehaviour
         foreach(BaseScriptableObject elem in Item.Input)
         {
             AddQueueObject(elem);
+            Debug.Log("AddQueue");
         }
     }
 

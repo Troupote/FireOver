@@ -35,7 +35,7 @@ RectTransform:
   - {fileID: 3469452139252231163}
   - {fileID: 6953318980766112148}
   - {fileID: 8389595291125699328}
-  - {fileID: 6401707011828713820}
+  - {fileID: 3819506393919290399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1001 &5162729344167084295
+--- !u!1001 &3058859714161505348
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -596,16 +596,16 @@ PrefabInstance:
     - target: {fileID: 4725593684766989153, guid: c281565af5a403c4ea1ed9e7fc0ce3bf,
         type: 3}
       propertyPath: m_Name
-      value: Button (Legacy)
+      value: ButtonPanel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c281565af5a403c4ea1ed9e7fc0ce3bf, type: 3}
---- !u!224 &6401707011828713820 stripped
+--- !u!224 &3819506393919290399 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2266115868381218907, guid: c281565af5a403c4ea1ed9e7fc0ce3bf,
     type: 3}
-  m_PrefabInstance: {fileID: 5162729344167084295}
+  m_PrefabInstance: {fileID: 3058859714161505348}
   m_PrefabAsset: {fileID: 0}

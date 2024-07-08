@@ -16,8 +16,16 @@ public class PlayerCollect : MonoBehaviour
     public GameObject Menu;
     public Button ButtonMenu;
 
+    public Button Button1;
+    public Button Button2;
+    public Button Button3;
+    [SerializeField] private Treatment protocoleiNSHALLAH;
+
+
     private int i = 0;
     public Inventory inventory;
+
+    private RecipesSO[] RecipeScriptableObject;
 
     void Start()
     {
@@ -63,12 +71,15 @@ public class PlayerCollect : MonoBehaviour
         {
             MachineScriptableObject MachinescriptableObject = MachineobjectWithSO.myMachineScriptableObject;
             MenuDisplay menuDisplay = other.GetComponent<MenuDisplay>();
+            
 
-            Treatment treatment = other.GetComponent<Treatment>(); 
+            Treatment treatment = other.GetComponent<Treatment>();
+            protocoleiNSHALLAH = treatment;
+
             
             if ( MachinescriptableObject.objectName.Length > 0 )
             {
-                
+                RecipeScriptableObject = menuDisplay.RecipeScriptableObject;
                 ButtonBuyO.SetActive(true);
                 
                 if (IsClickedBuy )
@@ -156,6 +167,73 @@ public class PlayerCollect : MonoBehaviour
     {
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
+    }
+
+    public void OnClick1()
+    {
+        if (Button1.interactable)
+        {
+            if(RecipeScriptableObject.Length>0)
+            {
+                int i = 0;
+                foreach(var elem in RecipeScriptableObject[0].Input)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        i++;
+                    }
+                }
+                if(i==0 && protocoleiNSHALLAH)
+                {
+                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
+                }
+            }
+    
+        }
+    }
+
+    public void OnClick2()
+    {
+        if (Button2.interactable)
+        {
+            if(RecipeScriptableObject.Length>0)
+            {
+                int i = 0;
+                foreach(var elem in RecipeScriptableObject[1].Input)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        i++;
+                    }
+                }
+                if(i==0 && protocoleiNSHALLAH)
+                {
+                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
+                }
+            }
+        }
+    }
+
+    public void OnClick3()
+    {
+        if (Button3.interactable)
+        {
+            if(RecipeScriptableObject.Length>0)
+            {
+                int i = 0;
+                foreach(var elem in RecipeScriptableObject[2].Input)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        i++;
+                    }
+                }
+                if(i==0 && protocoleiNSHALLAH)
+                {
+                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
+                }
+            }
+        }
     }
 
     
