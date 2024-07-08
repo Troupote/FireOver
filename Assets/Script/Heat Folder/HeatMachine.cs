@@ -30,6 +30,6 @@ public class HeatMachine : MonoBehaviour
 
     private void Start()
     {
-        PlayerHeat.AddPlayerHeat(AddAllTime);
+        PlayerHeat.AddPermanentHeatValue(AddAllTime);
     }
 }

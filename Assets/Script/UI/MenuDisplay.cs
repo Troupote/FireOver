@@ -10,9 +10,7 @@ public class MenuDisplay : MonoBehaviour
     private List<GameObject> instantiatedPanels = new List<GameObject>();
     public Treatment treatment;
 
-    public Button Button1;
-    public Button Button2;
-    public Button Button3;
+
     public Inventory inventory;
 
     public MachineObjectSo MachineobjectWithSO ;
@@ -69,7 +67,7 @@ public class MenuDisplay : MonoBehaviour
                     if (j < RecipeScriptableObject[i].Input.Length)
                     {
                         panelsImages[j].sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
-                        Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
+                        //Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
                     }
                     else
                     {
@@ -82,62 +80,6 @@ public class MenuDisplay : MonoBehaviour
 
     }
 
-    public void OnClick1()
-    {
-        if (Button1.interactable)
-        {
-            int i = 0;
-            foreach(var elem in RecipeScriptableObject[0].Input)
-            {
-                if(!inventory.items.Contains(elem))
-                {
-                    i++;
-                }
-            }
-            if(i==0)
-            {
-                treatment.AddQueue(RecipeScriptableObject[0]);
-            }
-           
-        }
-    }
 
-    public void OnClick2()
-    {
-        if (Button2.interactable)
-        {
-            int i = 0;
-            foreach(var elem in RecipeScriptableObject[1].Input)
-            {
-                if(!inventory.items.Contains(elem))
-                {
-                    i++;
-                }
-            }
-            if(i==0)
-            {
-                treatment.AddQueue(RecipeScriptableObject[1]);
-            }
-        }
-    }
-
-    public void OnClick3()
-    {
-        if (Button3.interactable)
-        {
-            int i = 0;
-            foreach(var elem in RecipeScriptableObject[2].Input)
-            {
-                if(!inventory.items.Contains(elem))
-                {
-                    i++;
-                }
-            }
-            if(i==0)
-            {
-                treatment.AddQueue(RecipeScriptableObject[2]);
-            }
-        }
-    }
     
 }

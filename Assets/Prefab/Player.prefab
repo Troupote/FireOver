@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5171461444426789882}
   - component: {fileID: 2018459395521148839}
   - component: {fileID: 3031450353311484477}
+  - component: {fileID: -8216302186872653579}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 118513561958945756}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -453.5857, y: -204.29318, z: 2.028913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -148,6 +149,9 @@ MonoBehaviour:
   ButtonBuyO: {fileID: 0}
   Menu: {fileID: 0}
   ButtonMenu: {fileID: 0}
+  Button1: {fileID: 0}
+  Button2: {fileID: 0}
+  Button3: {fileID: 0}
   inventory: {fileID: 3031450353311484477}
 --- !u!114 &3031450353311484477
 MonoBehaviour:
@@ -162,3 +166,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+--- !u!114 &-8216302186872653579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118513561958945756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 990f7d9024b02d9468b81f83836742ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Plane: {fileID: 0}
+  MachineButton: {fileID: 0}
+  MachineButton1: {fileID: 0}
+  MachineButton2: {fileID: 0}
+  MachineButton3: {fileID: 0}
+  Oven:
+  - {fileID: 8126507976065208448, guid: 23c2231ae7655d842be854b9aee9b188, type: 3}
+  - {fileID: 1885130358725764896, guid: 390c3a09ff9394648870171ca17a6f24, type: 3}
+  - {fileID: 8126507976065208448, guid: 23c2231ae7655d842be854b9aee9b188, type: 3}
+  - {fileID: 1885130358725764896, guid: 390c3a09ff9394648870171ca17a6f24, type: 3}

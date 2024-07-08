@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ChickenSO
   m_EditorClassIdentifier: Assembly-CSharp::ChickenScriptableObject
   objectName: Chicken
-  objectPrefab: {fileID: 8193444738010508577, guid: 7110048997eb6e5419ae972e7d1dd93c,
+  objectPrefab: {fileID: 4552145353919979865, guid: 46a3d4079aa5cab4ab0ca42a47676fb8,
     type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
