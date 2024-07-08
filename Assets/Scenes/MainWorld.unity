@@ -2216,6 +2216,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSelection01
       objectReference: {fileID: 0}
+    - target: {fileID: 5668362159291611470, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668362159291611470, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1441253363}
+    - target: {fileID: 5668362159291611470, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClickButtonHeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668362159291611470, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HeatSystem, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5905194315574617250, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2504,7 +2524,7 @@ PrefabInstance:
     - target: {fileID: 7567293965466108972, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.75293
+      value: -10.752899
       objectReference: {fileID: 0}
     - target: {fileID: 8239053510004555605, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
@@ -2582,6 +2602,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8775782528751175315, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175237794544970999, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175237794544970999, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175237794544970999, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175237794544970999, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

@@ -15,7 +15,6 @@ public class HeatSystem : MonoBehaviour
     public MeshRenderer SnowMesh;
     private Material SnowMaterial;
     public Button buttonHeat;
-    public Text buttonHeat;
     public loot_item loot_item;
 
     private bool Active;
@@ -91,7 +90,7 @@ public class HeatSystem : MonoBehaviour
             for(int i = 60;i>0;i--)
             {
                 yield return new WaitForSeconds(1f);
-                HeatText.text = i;
+                HeatText.text = i.ToString();
             }
             
         }
