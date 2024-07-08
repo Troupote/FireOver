@@ -5259,6 +5259,7 @@ GameObject:
   - component: {fileID: 7993553878002982690}
   - component: {fileID: 8831013930762008284}
   - component: {fileID: 6676417936198735208}
+  - component: {fileID: -7692483962203124824}
   m_Layer: 0
   m_Name: four + smoke2
   m_TagString: Untagged
@@ -5377,6 +5378,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1585670ecc684af488ce7b0c7b910f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7692483962203124824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126507976065208448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8007760926fc134583ff0893ec2af6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RecipeScriptableObject:
+  - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
+  - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
+  - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
+  panels:
+  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
+  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
+  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
 --- !u!1001 &1083627179355651012
 PrefabInstance:
   m_ObjectHideFlags: 0

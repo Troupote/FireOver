@@ -15,4 +15,6 @@ MonoBehaviour:
   recipeName: Plume
   Input:
   - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
+  - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
+  - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
   PrefabOutput: {fileID: 0}
