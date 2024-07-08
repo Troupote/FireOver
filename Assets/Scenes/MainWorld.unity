@@ -2466,6 +2466,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7567293965466108972, guid: e21358daefb7c83488252fd39a59731a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.75293
+      objectReference: {fileID: 0}
     - target: {fileID: 8239053510004555605, guid: e21358daefb7c83488252fd39a59731a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2608,6 +2613,10 @@ MonoBehaviour:
   ButtonBuyO: {fileID: 1468761148}
   Menu: {fileID: 1550167168}
   ButtonMenu: {fileID: 1277604167}
+  Button1: {fileID: 0}
+  Button2: {fileID: 0}
+  Button3: {fileID: 0}
+  protocoleiNSHALLAH: {fileID: 0}
   inventory: {fileID: 1441253359}
 --- !u!114 &1441253359
 MonoBehaviour:
@@ -3939,7 +3948,7 @@ PrefabInstance:
     - target: {fileID: 1140291899215509010, guid: 741166f358efc4949834cad1f69b9185,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.022
+      value: 0.28
       objectReference: {fileID: 0}
     - target: {fileID: 1140291899215509010, guid: 741166f358efc4949834cad1f69b9185,
         type: 3}

@@ -27,6 +27,16 @@ public class HeatSystem : MonoBehaviour
         StartCoroutine(Heater());
     }
 
+    public void AddPermanentHeatValue(float v)
+    {
+        WorldHeatValue += v;
+    }
+
+    public void RemouvePermanentHeatValue(float v)
+    {
+        WorldHeatValue -= v;
+    }
+
     public void AddPlayerHeat(float v)
     {
         PlayerHeatValue += v;
@@ -43,14 +53,17 @@ public class HeatSystem : MonoBehaviour
         while (true)
         {
             float tmp = PlayerHeatValue + WorldHeatValue;
-            float lerp = 0.0002f * WorldHeatValue + 0.0004f * (1 - WorldHeatValue);
-
-            SnowMaterial.SetFloat("_HSnow", lerp);
+            float lerp = -0.000005f * WorldHeatValue + 0.0f * (1 - WorldHeatValue);
 
 
-            Debug.Log("Ammo left: " + tmp, this);
+            SnowMaterial.SetFloat("_HSnow", Mathf.Clamp(lerp, 0.00002f, 0.001f));
+
+            SnowMaterial.SetFloat("_HSnowRatio", ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f));
+
+            Debug.Log("Ammo left: " + ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f), this);
             HeatText.text = tmp.ToString("F2") + " °C";
-            WorldHeatValue -= 0.1f*MultiplyHeatValue;
+            WorldHeatValue -= 1f;
+
             yield return new WaitForSeconds(0.1f);
         }
     }
