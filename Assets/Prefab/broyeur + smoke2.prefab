@@ -323,9 +323,17 @@ MonoBehaviour:
   RecipeScriptableObject:
   - {fileID: 11400000, guid: 9819fa9ce02a7e046b753549435ad48d, type: 2}
   - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
-  Menu: {fileID: 7827414916549437377, guid: a96c1e23e48ff4646890a7917ca130c1, type: 3}
-  PanelPrefab: {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b,
-    type: 3}
+  - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
+  panels:
+  - {fileID: 755391834915184437, guid: b4b7bde09389b6245aabc4684083251b, type: 3}
+  - {fileID: 755391834915184437, guid: b352e28dfbb524e4f9c56554674879d9, type: 3}
+  - {fileID: 755391834915184437, guid: a88037cd8a4214d4b855cfd51aba2198, type: 3}
+  treatment: {fileID: 6082742558133332708}
+  Button1: {fileID: 7057012770260402909, guid: c281565af5a403c4ea1ed9e7fc0ce3bf, type: 3}
+  Button2: {fileID: 7057012770260402909, guid: fb1e6323c7b3a7542a5dca1779501548, type: 3}
+  Button3: {fileID: 7057012770260402909, guid: 5fbba65f3f3f60f4b94a6b3612fc26fd, type: 3}
+  inventory: {fileID: 0}
+  MachineobjectWithSO: {fileID: -1576148796777806094}
 --- !u!1 &2120336220401399227
 GameObject:
   m_ObjectHideFlags: 0

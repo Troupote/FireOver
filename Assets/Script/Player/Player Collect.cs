@@ -23,16 +23,14 @@ public class PlayerCollect : MonoBehaviour
     {
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
-        Menu.SetActive(true);
+        Menu.SetActive(false);
     }
 
     public void OnTriggerStay(Collider other)
     {
-        
         ObjectWithSO objectWithSO = other.GetComponent<ObjectWithSO>();
         if (objectWithSO != null)
         {
-            
             BaseScriptableObject scriptableObject = objectWithSO.myScriptableObject;
             
             if ( scriptableObject.objectName.Length > 0 )
@@ -64,22 +62,28 @@ public class PlayerCollect : MonoBehaviour
         if (MachineobjectWithSO != null)
         {
             MachineScriptableObject MachinescriptableObject = MachineobjectWithSO.myMachineScriptableObject;
+            MenuDisplay menuDisplay = other.GetComponent<MenuDisplay>();
+
             Treatment treatment = other.GetComponent<Treatment>(); 
             
             if ( MachinescriptableObject.objectName.Length > 0 )
             {
                 
                 ButtonBuyO.SetActive(true);
-
+                
                 if (IsClickedBuy )
                 {
 
                     if(inventory.items.Contains(MachinescriptableObject.SOprefab))
                     {
-                        Debug.Log("ok bozo");
+
+
                         IsClickedBuy = false;
+ 
+                        menuDisplay.Clicked();
                         Menu.SetActive(true);
-                        treatment.AddQueue(MachinescriptableObject.SOprefab);
+                        
+                        //treatment.AddQueue(MachinescriptableObject.SOprefab);
                         //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
                         
                         if(inventory.items.Contains(MachinescriptableObject.SOprefab))
@@ -144,7 +148,6 @@ public class PlayerCollect : MonoBehaviour
         if (ButtonMenu.interactable)
         {
             Menu.SetActive(false);
-
         }
     }
 
@@ -154,4 +157,6 @@ public class PlayerCollect : MonoBehaviour
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
     }
+
+    
 }

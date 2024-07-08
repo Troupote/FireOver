@@ -14,7 +14,15 @@ public class Treatment : MonoBehaviour
         enumerator = Treat();
     }
 
-    public void AddQueue(BaseScriptableObject Item)
+    public void AddQueue(RecipesSO Item)
+    {
+        foreach(BaseScriptableObject elem in Item.Input)
+        {
+            AddQueueObject(elem);
+        }
+    }
+
+    public void AddQueueObject(BaseScriptableObject Item)
     {
         if (Queue.Count == 0)
         {

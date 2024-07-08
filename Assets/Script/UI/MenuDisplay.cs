@@ -6,57 +6,138 @@ using UnityEngine.UI;
 public class MenuDisplay : MonoBehaviour
 {
     public RecipesSO[] RecipeScriptableObject;
-    public GameObject Menu;
-    public GameObject PanelPrefab;
-    private List<GameObject> panels = new List<GameObject>();
+    public GameObject[] panels;
+    private List<GameObject> instantiatedPanels = new List<GameObject>();
+    public Treatment treatment;
+
+    public Button Button1;
+    public Button Button2;
+    public Button Button3;
+    public Inventory inventory;
+
+    public MachineObjectSo MachineobjectWithSO ;
 
 
-
-
-    void Start()
+    public void Clicked()
     {
-        Debug.Log("=================================================================");
-        for (int i = 0; i < RecipeScriptableObject.Length; i++)
-        {
-            GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
-            newPanel.transform.SetParent(Menu.transform, false);
-            panels.Add(newPanel);
-            Text a = newPanel.GetComponentInChildren<Text>();
-            a.text = "feur";
-            Debug.Log(Menu.transform);
-        }
-        Debug.Log("=================================================================");
-        /*
-         *         Debug.Log("=================================================================");
+        GameObject selectionPanel = GameObject.Find("Canvas");
+        Transform CraftingMenu = selectionPanel.transform.Find("CraftingMenu");
+        Transform CraftingMenuPanel = CraftingMenu.transform.Find("Crafting Menu Panel");
+        Transform view = CraftingMenuPanel.transform.Find("View");
+        Transform content = view.transform.Find("Content");
 
-        foreach (var RS in RecipeScriptableObject)
+        if (content == null)
         {
-            GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
-            newPanel.transform.SetParent(Menu.transform, false);
-            panels.Add(newPanel);
-            Debug.Log(RS.recipeName);
+            Debug.LogError("GameObject 'content' not found.");
+            return;
         }
-         * 
-         * for (int i = 0; i < RecipeScriptableObject.Length; i++)
+        
+        // Ensure RecipeScriptableObject and panels arrays have matching lengths
+        if (RecipeScriptableObject.Length != panels.Length)
         {
-            GameObject newPanel = Instantiate(PanelPrefab, Menu.transform);
-            newPanel.transform.SetParent(Menu.transform, false);
-            panels.Add(newPanel);
-        }   
+            Debug.LogError("Mismatch between RecipeScriptableObject and panels array lengths.");
+            return;
+        }
 
-        for(int i = 0; i < panels.Count ;i++ )
+        for (int i = 0; i < panels.Length; i++)
         {
+            GameObject panel = Instantiate(panels[i], content.transform);
+
             Text text = panels[i].GetComponentInChildren<Text>();
-            text.text = RecipeScriptableObject[i].recipeName;  
-            Button button = panels[i].GetComponentInChildren<Button>();
-            Image[] imageComponents = panels[i].GetComponentsInChildren<Image>();
-            List<Image> images = new List<Image>(imageComponents);
-            int j = 0;
-            foreach (var elem in images)
+            text.text = RecipeScriptableObject[i].recipeName;
+            
+
+            Transform[] childTransforms = panels[i].GetComponentsInChildren<Transform>();
+            List<Image> panelsImages = new List<Image>();
+
+            foreach (Transform child in childTransforms)
             {
-                elem.sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
-                j++;
+                if(child.name.Contains("Image"))
+                {
+                    Image image = child.GetComponent<Image>();
+                    panelsImages.Add(image);
+                }
+                
+                
             }
-        }*/
+
+            // Ensure there are at least 3 Image components in the panel
+            if (panelsImages.Count >= 3)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    if (j < RecipeScriptableObject[i].Input.Length)
+                    {
+                        panelsImages[j].sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
+                        Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
+                    }
+                    else
+                    {
+                        Debug.LogError("Not enough inputs in RecipeScriptableObject " + i);
+                    }
+                }
+            }
+
+        }
+
     }
+
+    public void OnClick1()
+    {
+        if (Button1.interactable)
+        {
+            int i = 0;
+            foreach(var elem in RecipeScriptableObject[0].Input)
+            {
+                if(!inventory.items.Contains(elem))
+                {
+                    i++;
+                }
+            }
+            if(i==0)
+            {
+                treatment.AddQueue(RecipeScriptableObject[0]);
+            }
+           
+        }
+    }
+
+    public void OnClick2()
+    {
+        if (Button2.interactable)
+        {
+            int i = 0;
+            foreach(var elem in RecipeScriptableObject[1].Input)
+            {
+                if(!inventory.items.Contains(elem))
+                {
+                    i++;
+                }
+            }
+            if(i==0)
+            {
+                treatment.AddQueue(RecipeScriptableObject[1]);
+            }
+        }
+    }
+
+    public void OnClick3()
+    {
+        if (Button3.interactable)
+        {
+            int i = 0;
+            foreach(var elem in RecipeScriptableObject[2].Input)
+            {
+                if(!inventory.items.Contains(elem))
+                {
+                    i++;
+                }
+            }
+            if(i==0)
+            {
+                treatment.AddQueue(RecipeScriptableObject[2]);
+            }
+        }
+    }
+    
 }
