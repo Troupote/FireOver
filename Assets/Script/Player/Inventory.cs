@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public List<BaseScriptableObject> items = new();
+    public Button buttonTrash;
 
     public void AddItem(BaseScriptableObject itemToAdd)
     {
@@ -15,6 +17,8 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(itemToRemove);
     }
+
+
 
 
 }

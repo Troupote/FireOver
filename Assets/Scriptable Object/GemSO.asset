@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
-  m_Name: FurnaceRecipe
+  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
+  m_Name: GemSO
   m_EditorClassIdentifier: 
-  recipeName: Furnace
-  Input: []
-  PrefabOutput: {fileID: 8126507976065208448, guid: 23c2231ae7655d842be854b9aee9b188,
-    type: 3}
+  objectName: GemSO
+  objectPrefab: {fileID: 0}
+  objectValue: 0
+  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  ObjectImage: {fileID: 0}

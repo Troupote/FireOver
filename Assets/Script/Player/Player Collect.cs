@@ -95,6 +95,7 @@ public class PlayerCollect : MonoBehaviour
                     menuDisplay.Clicked();
                     Menu.SetActive(true);
                     
+                    
                     //treatment.AddQueue(MachinescriptableObject.SOprefab);
                     //GameObject Combustive = Instantiate(MachinescriptableObject.SOprefab.objectPrefab,other.transform.position + new Vector3(0,0,4f), Quaternion.identity);
 
@@ -152,6 +153,36 @@ public class PlayerCollect : MonoBehaviour
     {
         ButtonEO.SetActive(false);
         ButtonBuyO.SetActive(false);
+    }
+
+
+    public void OnClickRubbish()
+    {
+        if(buttonTrash.interactable)
+        {
+            inventory.RemoveItem();
+                                            
+            int j = 0;
+            for(int k = 0;k < imageObjects.Length; k++)
+            {
+                if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                {
+                    while (j<5)
+                    {
+                        imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+                        j++;
+                    }
+                    if(j==5)
+                    {
+                    imageObjects[j].GetComponent<Image>().sprite = null;
+                    i--;
+                    }
+                    break;
+                }
+                j++;
+                
+            }
+        }
     }
 
     public void OnClick1()

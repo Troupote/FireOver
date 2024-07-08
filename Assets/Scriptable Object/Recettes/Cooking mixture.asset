@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
-  m_Name: NewStoneMyScriptableObject
+  m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
+  m_Name: Cooking mixture
   m_EditorClassIdentifier: 
-  objectName: 
-  objectPrefab: {fileID: 0}
-  objectValue: 0
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
-  ObjectImage: {fileID: 0}
+  recipeName: Cooking mixture
+  Input: []
+  PrefabOutput: {fileID: 0}
