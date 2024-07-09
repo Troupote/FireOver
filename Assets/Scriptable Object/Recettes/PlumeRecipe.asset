@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
   m_Name: PlumeRecipe
   m_EditorClassIdentifier: 
-  recipeName: Plume
+  objectName: Plume
   Input:
   - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
   - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
   - {fileID: 11400000, guid: 0da3b054a38cf74458b54dc35fd2cb34, type: 2}
-  PrefabOutput: {fileID: 0}
+  objectPrefab: {fileID: 0}
+  ObjectImage: {fileID: 0}
+  IsRecipe: 0
+  objectColor: {r: 0, g: 0, b: 0, a: 0}

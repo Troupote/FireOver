@@ -5,20 +5,17 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    public List<BaseScriptableObject> items = new();
+    public List<RecipesSO> items = new List<RecipesSO>();
 
 
-    public void AddItem(BaseScriptableObject itemToAdd)
+    public void AddItem(RecipesSO itemToAdd)
     {
         items.Add(itemToAdd);
     }
 
-    public void RemoveItem(BaseScriptableObject itemToRemove)
+    public void RemoveItem(RecipesSO itemToRemove)
     {
         items.Remove(itemToRemove);
     }
-
-
-
 
 }

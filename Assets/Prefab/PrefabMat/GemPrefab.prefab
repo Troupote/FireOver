@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5246828529907533548}
   - component: {fileID: 8100375063740612629}
   - component: {fileID: 2810134697319619019}
-  - component: {fileID: -1422195607183513084}
   - component: {fileID: -8472083769013825228}
+  - component: {fileID: 757250210222644695}
   m_Layer: 0
   m_Name: GemPrefab
   m_TagString: Untagged
@@ -107,19 +107,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-1422195607183513084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4458159580833626480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9afd6afb1e323b49829702ff8fe1ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myScriptableObject: {fileID: 11400000, guid: a611b99faa8bef44e9cdd7605a42a1a1, type: 2}
 --- !u!54 &-8472083769013825228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &757250210222644695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458159580833626480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc7f57314e160c4a9bf24d27c916f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myScriptableObject: {fileID: 11400000, guid: 9e330eb904811d24fbfc544eb08d6acc, type: 2}

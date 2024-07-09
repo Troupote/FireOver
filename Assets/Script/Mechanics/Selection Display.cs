@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class Target : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class Target : MonoBehaviour
     public Button MachineButton2;
     public Button MachineButton3;
 
-
+    public Inventory inventory;
     public GameObject[] Oven;
+    public PlayerCollect PlayerCollect;
+    private List<RecipesSO> RecipeS0Copy = new List<RecipesSO> (); 
 
     void Start()
     {
@@ -81,15 +84,65 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            if (Created && !MachineCreated)
+            MachineObjectSo MachineobjectWithSO = Oven[0].GetComponent<MachineObjectSo>();
+            
+            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
             {
-                GameObject Machine = Instantiate(Oven[0], realPosition, Quaternion.identity);
-                MachineCreated = true;
+                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        
+                    }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
 
-            }
-            {
+                }
+                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
+                {
+                    if (Created && !MachineCreated)
+                    {
+                        GameObject Machine = Instantiate(Oven[0], realPosition, Quaternion.identity);
+                        MachineCreated = true;
 
+                    }
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
+                        {
+                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
+                                
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
+                }               
             }
+            
+
+
         }
 
     }
@@ -97,15 +150,62 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            if (Created && !MachineCreated)
+            MachineObjectSo MachineobjectWithSO  = Oven[1].GetComponent<MachineObjectSo>();
+            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
             {
-                GameObject Machine = Instantiate(Oven[1], realPosition, Quaternion.identity);
-                MachineCreated = true;
+                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        
+                    }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
 
-            }
-            {
+                }
+                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
+                {
+                    if (Created && !MachineCreated)
+                    {
+                        GameObject Machine = Instantiate(Oven[1], realPosition, Quaternion.identity);
+                        MachineCreated = true;
 
+                    }
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
+                        {
+                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
+                                
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
+                }               
             }
+            
         }
 
     }
@@ -113,15 +213,63 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            if (Created && !MachineCreated)
+            MachineObjectSo MachineobjectWithSO = Oven[2].GetComponent<MachineObjectSo>();
+            
+            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
             {
-                GameObject Machine = Instantiate(Oven[2], realPosition, Quaternion.identity);
-                MachineCreated = true;
+                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        
+                    }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
 
+                }
+                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
+                {
+                    if (Created && !MachineCreated)
+                    {
+                        GameObject Machine = Instantiate(Oven[2], realPosition, Quaternion.identity);
+                        MachineCreated = true;
+
+                    }
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
+                        {
+                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                            {
+                                while (j<5)
+                                {
+                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
+                                
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
+                }               
             }
-            {
- 
-            }
+            
         }
 
     }
@@ -129,15 +277,63 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            if (Created && !MachineCreated)
+            MachineObjectSo MachineobjectWithSO = Oven[3].GetComponent<MachineObjectSo>();
+            
+            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
             {
-                GameObject Machine = Instantiate(Oven[3], realPosition, Quaternion.identity);
-                MachineCreated = true;
+                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
+                {
+                    if(!inventory.items.Contains(elem))
+                    {
+                        
+                    }
+                    else
+                    {
+                        RecipeS0Copy.Add(elem);
+                        
+                    }
 
-            }
-            {
+                }
+                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
+                {
+                    if (Created && !MachineCreated)
+                    {
+                        GameObject Machine = Instantiate(Oven[3], realPosition, Quaternion.identity);
+                        MachineCreated = true;
 
+                    }
+                    foreach(var elem in RecipeS0Copy)
+                    {
+                        inventory.RemoveItem(elem);
+                                                        
+                        int j = 0;
+                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
+                        {
+                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem. objectName)
+                            {
+                                while (j<5)
+                                {
+                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
+                                    j++;
+                                }
+                                if(j==5)
+                                {
+                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
+
+                                }
+                                break;
+                            }
+                            j++;
+                            
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.Log("Manque de matériaux");
+                }               
             }
+            
         }
 
     }

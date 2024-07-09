@@ -28,7 +28,7 @@ public class PlayerCollect : MonoBehaviour
     public Inventory inventory;
 
     private RecipesSO[] RecipeScriptableObject;
-    private List<BaseScriptableObject> RecipeS0Copy = new List<BaseScriptableObject> (); 
+    private List<RecipesSO> RecipeS0Copy = new List<RecipesSO> (); 
 
     private RecipesSO RecipeSo;
 
@@ -41,10 +41,10 @@ public class PlayerCollect : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        ObjectWithSO objectWithSO = other.GetComponent<ObjectWithSO>();
+        AttachingObject objectWithSO = other.GetComponent<AttachingObject>();
         if (objectWithSO != null)
         {
-            BaseScriptableObject scriptableObject = objectWithSO.myScriptableObject;
+            RecipesSO scriptableObject = objectWithSO.myScriptableObject;
             
             if ( scriptableObject.objectName.Length > 0 )
             {
@@ -168,9 +168,12 @@ public class PlayerCollect : MonoBehaviour
             int j = 0;
             for(int k = 0;k < imageObjects.Length; k++)
             {
-                if(imageObjects[k].GetComponent<Image>().sprite.name == inventory.items[inventory.items.Count-1].objectName)
+                RecipesSO baseItem = inventory.items[inventory.items.Count-1];
+
+
+                if(imageObjects[k].GetComponent<Image>().sprite.name == baseItem.objectName)
                 {
-                    while (j<5)
+                    while (j<5 && inventory.items.Count>1)
                     {
                         imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
                         j++;
@@ -180,6 +183,12 @@ public class PlayerCollect : MonoBehaviour
                     imageObjects[j].GetComponent<Image>().sprite = null;
                     i--;
                     }
+                    if(inventory.items.Count==1)
+                    {
+                        imageObjects[j].GetComponent<Image>().sprite = null;
+                        i--;
+                    }
+
                     break;
                 }
                 j++;

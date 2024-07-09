@@ -24,13 +24,12 @@ public class MenuDisplay : MonoBehaviour
         Transform view = CraftingMenuPanel.transform.Find("View");
         Transform content = view.transform.Find("Content");
 
-
         for (int i = 0; i < panels.Length; i++)
         {
             GameObject panel = Instantiate(panels[i], content.transform);
 
             Text text = panels[i].GetComponentInChildren<Text>();
-            text.text = RecipeScriptableObject[i].recipeName;
+            text.text = RecipeScriptableObject[i].objectName;
             
 
             Transform[] childTransforms = panels[i].GetComponentsInChildren<Transform>();
@@ -56,10 +55,6 @@ public class MenuDisplay : MonoBehaviour
                     {
                         panelsImages[j].sprite = RecipeScriptableObject[i].Input[j].ObjectImage;
                         //Debug.Log(panelsImages[j].name+"   "+panelsImages[j].sprite.name + "  "+ RecipeScriptableObject[i].Input[j].ObjectImage.name);
-                    }
-                    else
-                    {
-                        Debug.LogError("Not enough inputs in RecipeScriptableObject " + i);
                     }
                 }
             }

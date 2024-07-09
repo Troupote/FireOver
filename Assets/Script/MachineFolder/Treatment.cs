@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Treatment : MonoBehaviour 
 {
-    private List<BaseScriptableObject> Queue = new List<BaseScriptableObject>();
+    private List<RecipesSO> Queue = new List<RecipesSO>();
     private IEnumerator enumerator;
 
 
@@ -16,7 +16,7 @@ public class Treatment : MonoBehaviour
 
     public void AddQueue(RecipesSO Item)
     {
-        foreach(BaseScriptableObject elem in Item.Input)
+        foreach(RecipesSO elem in Item.Input)
         {
             AddQueueObject(elem);
             
@@ -24,7 +24,7 @@ public class Treatment : MonoBehaviour
         }
     }
 
-    public void AddQueueObject(BaseScriptableObject Item)
+    public void AddQueueObject(RecipesSO Item)
     {
         if (Queue.Count == 0)
         {
@@ -46,7 +46,7 @@ public class Treatment : MonoBehaviour
 
         while (Queue.Count > 0)
         {
-            BaseScriptableObject Temp = Queue[0];
+            RecipesSO Temp = Queue[0];
 
             GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
             

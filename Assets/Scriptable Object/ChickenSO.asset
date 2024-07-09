@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
+  m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
   m_Name: ChickenSO
-  m_EditorClassIdentifier: Assembly-CSharp::ChickenScriptableObject
+  m_EditorClassIdentifier: 
   objectName: Chicken
-  objectPrefab: {fileID: 4552145353919979865, guid: 46a3d4079aa5cab4ab0ca42a47676fb8,
-    type: 3}
-  objectValue: 0
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  Input: []
+  objectPrefab: {fileID: 0}
   ObjectImage: {fileID: 21300000, guid: 57b2d7ed7ae0197459dd9a89df11dc02, type: 3}
+  IsRecipe: 0
+  objectColor: {r: 0, g: 0, b: 0, a: 0}

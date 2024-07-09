@@ -15,6 +15,7 @@ public class HeatSystem : MonoBehaviour
     public MeshRenderer SnowMesh;
     private Material SnowMaterial;
     public Button buttonHeat;
+    public Text buttonHeatText;
     public loot_item loot_item;
 
     private bool Active;
@@ -24,6 +25,7 @@ public class HeatSystem : MonoBehaviour
         SnowMaterial = SnowMesh.material;
         SnowMaterial.SetFloat("_HSnow", 0.0004f);
         StartCoroutine(Heater());
+        StartCoroutine(timeHazard());
     }
 
     public void AddPermanentHeatValue(float v)
@@ -59,7 +61,7 @@ public class HeatSystem : MonoBehaviour
 
             SnowMaterial.SetFloat("_HSnowRatio", ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f));
 
-            Debug.Log("Ammo left: " + ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f), this);
+            //Debug.Log("Ammo left: " + ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f), this);
             HeatText.text = tmp.ToString("F2") + " °C";
             WorldHeatValue -= 1f*MultiplyHeatValue;
 
@@ -90,7 +92,7 @@ public class HeatSystem : MonoBehaviour
             for(int i = 60;i>0;i--)
             {
                 yield return new WaitForSeconds(1f);
-                HeatText.text = i.ToString();
+                buttonHeatText.text = i.ToString();
             }
             
         }

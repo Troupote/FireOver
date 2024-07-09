@@ -4,9 +4,12 @@ using UnityEngine.UI;
 
 public abstract class RecipesSO : ScriptableObject
 {
-    public string recipeName;
+    public string objectName;
 
-    public BaseScriptableObject[] Input;
-    public GameObject PrefabOutput;
+    public RecipesSO[] Input;
+    public GameObject objectPrefab;
+    public  Sprite ObjectImage;
+    public bool IsRecipe;
+    public Color objectColor;
 
 }

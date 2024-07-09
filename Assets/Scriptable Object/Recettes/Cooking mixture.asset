@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
   m_Name: Cooking mixture
   m_EditorClassIdentifier: 
-  recipeName: Cooking mixture
-  Input: []
-  PrefabOutput: {fileID: 0}
+  objectName: CookingMixture
+  Input:
+  - {fileID: 11400000, guid: 9e330eb904811d24fbfc544eb08d6acc, type: 2}
+  - {fileID: 11400000, guid: 9e330eb904811d24fbfc544eb08d6acc, type: 2}
+  objectPrefab: {fileID: 0}
+  ObjectImage: {fileID: 0}
+  IsRecipe: 0
+  objectColor: {r: 0, g: 0, b: 0, a: 0}

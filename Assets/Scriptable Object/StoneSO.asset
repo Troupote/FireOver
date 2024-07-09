@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de73b8915f5d26479c9628ba8670764, type: 3}
+  m_Script: {fileID: 11500000, guid: 55c36cbaba85f414985686cf306574f4, type: 3}
   m_Name: StoneSO
   m_EditorClassIdentifier: 
   objectName: Stone
-  objectPrefab: {fileID: 6289679180492170819, guid: 73f742b26a29a944b89930e514f8736f,
-    type: 3}
-  objectValue: 0
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  Input: []
+  objectPrefab: {fileID: 0}
   ObjectImage: {fileID: 21300000, guid: e8c63e1609f33184ea8cbee9667182e2, type: 3}
+  IsRecipe: 0
+  objectColor: {r: 0, g: 0, b: 0, a: 0}

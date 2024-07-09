@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class AttachingObject : MonoBehaviour
 {
-    public RecipesSO Item;
+    public RecipesSO myScriptableObject;
 }
