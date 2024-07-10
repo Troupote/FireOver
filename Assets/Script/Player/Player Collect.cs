@@ -27,7 +27,7 @@ public class PlayerCollect : MonoBehaviour
     [SerializeField] private Treatment protocoleiNSHALLAH;
 
 
-    private int i = 0;
+    public int i = 0;
     public Inventory inventory;
 
     private RecipesSO[] RecipeScriptableObject;
@@ -152,7 +152,7 @@ public class PlayerCollect : MonoBehaviour
                     Destroy(child.gameObject);
                 }
             }
-            playerMovement.vitesseDeplacement = 1.5f; 
+            playerMovement.vitesseDeplacement = 10f; 
 
 
         }

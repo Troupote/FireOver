@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: OvenSO
   m_EditorClassIdentifier: 
   objectName: Oven
-  SOprefab: {fileID: 11400000, guid: 920d9303d3532d54c976201e3eb606b7, type: 2}
+  SOprefab:
+  - {fileID: 11400000, guid: 18d04eb0f34a38345852943cbc5560f8, type: 2}
+  - {fileID: 11400000, guid: 315c2bfc2ea959b4abdd745012231687, type: 2}
+  - {fileID: 11400000, guid: 315c2bfc2ea959b4abdd745012231687, type: 2}
   objectPrefab: {fileID: 8126507976065208448, guid: 23c2231ae7655d842be854b9aee9b188,
     type: 3}
   objectValue: 0

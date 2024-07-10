@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CrusherSO
   m_EditorClassIdentifier: 
   objectName: Crusher
-  SOprefab: {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
+  SOprefab:
+  - {fileID: 11400000, guid: 315c2bfc2ea959b4abdd745012231687, type: 2}
+  - {fileID: 11400000, guid: db8bb2939afb5d74dbccf4fd062a7d6b, type: 2}
   objectPrefab: {fileID: 1885130358725764896, guid: 390c3a09ff9394648870171ca17a6f24,
     type: 3}
   objectValue: 0

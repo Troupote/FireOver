@@ -40,7 +40,7 @@ public class Treatment : MonoBehaviour
         {
             RecipesSO Temp = Queue[0];
 
-            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 3, 4f), Quaternion.identity);
+            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab, new Vector3(0, 0, 4f), Quaternion.identity);
             
 
             yield return new WaitForSeconds(2);

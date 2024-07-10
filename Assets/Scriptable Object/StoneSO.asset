@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Stone
   Input: []
-  objectPrefab: {fileID: 0}
+  objectPrefab: {fileID: 4552145353919979865, guid: 46a3d4079aa5cab4ab0ca42a47676fb8,
+    type: 3}
   ObjectImage: {fileID: 21300000, guid: e8c63e1609f33184ea8cbee9667182e2, type: 3}
   IsRecipe: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}

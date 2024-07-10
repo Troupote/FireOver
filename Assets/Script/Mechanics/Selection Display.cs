@@ -39,7 +39,7 @@ public class Target : MonoBehaviour
             RaycastHit hit;
 
             // Teste si le rayon interagit avec le plan
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit) && hit.collider.CompareTag("Plane"))
             {
                 // Obtient la position de l'impact
                 
@@ -84,65 +84,7 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            MachineObjectSo MachineobjectWithSO = Oven[0].GetComponent<MachineObjectSo>();
-            
-            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
-            {
-                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-
-                }
-                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
-                {
-                    if (Created && !MachineCreated)
-                    {
-                        GameObject Machine = Instantiate(Oven[0], realPosition, Quaternion.identity);
-                        MachineCreated = true;
-
-                    }
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
-                        {
-                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
-                                
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }               
-            }
-            
-
-
+            MachineRecipe(0);
         }
 
     }
@@ -150,61 +92,7 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            MachineObjectSo MachineobjectWithSO  = Oven[1].GetComponent<MachineObjectSo>();
-            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
-            {
-                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-
-                }
-                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
-                {
-                    if (Created && !MachineCreated)
-                    {
-                        GameObject Machine = Instantiate(Oven[1], realPosition, Quaternion.identity);
-                        MachineCreated = true;
-
-                    }
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
-                        {
-                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
-                                
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }               
-            }
+            MachineRecipe(1);
             
         }
 
@@ -213,62 +101,7 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            MachineObjectSo MachineobjectWithSO = Oven[2].GetComponent<MachineObjectSo>();
-            
-            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
-            {
-                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-
-                }
-                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
-                {
-                    if (Created && !MachineCreated)
-                    {
-                        GameObject Machine = Instantiate(Oven[2], realPosition, Quaternion.identity);
-                        MachineCreated = true;
-
-                    }
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
-                        {
-                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
-                                
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }               
-            }
+           MachineRecipe(2);
             
         }
 
@@ -277,64 +110,73 @@ public class Target : MonoBehaviour
     {
         if(MachineButton.IsInteractable())
         {
-            MachineObjectSo MachineobjectWithSO = Oven[3].GetComponent<MachineObjectSo>();
-            
-            if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
-            {
-                foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-
-                }
-                if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
-                {
-                    if (Created && !MachineCreated)
-                    {
-                        GameObject Machine = Instantiate(Oven[3], realPosition, Quaternion.identity);
-                        MachineCreated = true;
-
-                    }
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
-                        {
-                            if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem. objectName)
-                            {
-                                while (j<5)
-                                {
-                                    PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
-
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }               
-            }
-            
+            MachineRecipe(3);
         }
 
     }
+
+    void MachineRecipe(int index)
+    {
+        MachineObjectSo MachineobjectWithSO = Oven[index].GetComponent<MachineObjectSo>();
+
+
+            
+        if(MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length>0)
+        {
+            List<RecipesSO> InventoryCopy = new List<RecipesSO>(inventory.items);
+
+            foreach(var elem in MachineobjectWithSO.myMachineScriptableObject.SOprefab)
+            {
+                if (InventoryCopy.Contains(elem))
+                {
+                    RecipeS0Copy.Add(elem);
+                    InventoryCopy.Remove(elem);
+                }
+
+            }
+            if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
+            {
+                if (Created && !MachineCreated)
+                {
+                    GameObject Machine = Instantiate(Oven[index], realPosition, Quaternion.identity);
+                    MachineCreated = true;
+
+                }
+
+                foreach(var elem in RecipeS0Copy)
+                {
+                    inventory.RemoveItem(elem);
+                                                    
+                    
+                    for(int k = 0;k < PlayerCollect.imageObjects.Length; k++)
+                    {
+                        int j = k;
+                        if(PlayerCollect.imageObjects[k].GetComponent<Image>().sprite.name == elem. objectName)
+                        {
+                            while (j<5)
+                            {
+                                PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = PlayerCollect.imageObjects[j+1].GetComponent<Image>().sprite;
+                                j++;
+                            }
+                            if(j==5)
+                            {
+                            PlayerCollect.imageObjects[j].GetComponent<Image>().sprite = null;
+                            PlayerCollect.i--;
+                            }
+                            break;
+                        }
+                        
+                        
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Manque de matériaux poutr les machines");
+            }    
+            RecipeS0Copy.Clear();           
+        }
+            
+    }
+    
 }

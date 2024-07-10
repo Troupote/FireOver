@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: CraftTableSO
   m_EditorClassIdentifier: 
   objectName: CraftTable
-  SOprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  SOprefab:
+  - {fileID: 11400000, guid: db8bb2939afb5d74dbccf4fd062a7d6b, type: 2}
+  - {fileID: 11400000, guid: db8bb2939afb5d74dbccf4fd062a7d6b, type: 2}
+  - {fileID: 11400000, guid: 9819fa9ce02a7e046b753549435ad48d, type: 2}
+  objectPrefab: {fileID: 221921219832507958, guid: 8c549705132901e42b9265b9b86885a7,
+    type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
   ObjectImage: {fileID: 0}

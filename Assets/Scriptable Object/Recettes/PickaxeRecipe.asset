@@ -16,7 +16,8 @@ MonoBehaviour:
   Input:
   - {fileID: 11400000, guid: 790f4694ee52cd049b365744accc734c, type: 2}
   - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
-  objectPrefab: {fileID: 0}
-  ObjectImage: {fileID: 0}
+  objectPrefab: {fileID: 4458159580833626480, guid: 2d8d9bcf4ea7da744b016673db30df7f,
+    type: 3}
+  ObjectImage: {fileID: 21300000, guid: 97e1c72a836df16488e27653b36f8756, type: 3}
   IsRecipe: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}

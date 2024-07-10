@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: AlchimySO
   m_EditorClassIdentifier: 
   objectName: AlchimySO
-  SOprefab: {fileID: 0}
-  objectPrefab: {fileID: 0}
+  SOprefab:
+  - {fileID: 11400000, guid: 46bc59e6d17e2ad44bd484c6f516d3ae, type: 2}
+  - {fileID: 11400000, guid: 46bc59e6d17e2ad44bd484c6f516d3ae, type: 2}
+  - {fileID: 11400000, guid: db8bb2939afb5d74dbccf4fd062a7d6b, type: 2}
+  objectPrefab: {fileID: 2392571499169905199, guid: 2e790e3387bfdab46b59ea100ea4b025,
+    type: 3}
   objectValue: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
   ObjectImage: {fileID: 0}

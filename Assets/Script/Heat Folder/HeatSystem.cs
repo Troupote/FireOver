@@ -18,6 +18,8 @@ public class HeatSystem : MonoBehaviour
     public Text buttonHeatText;
     public loot_item loot_item;
 
+    public GameManager GameManager;
+
     private bool Active;
 
     void Start()
@@ -54,6 +56,10 @@ public class HeatSystem : MonoBehaviour
         while (true)
         {
             float tmp = PlayerHeatValue + WorldHeatValue;
+            if(tmp <0)
+            {
+                GameManager.GameOverScene();
+            }
             float lerp = -0.000005f * WorldHeatValue + 0.0f * (1 - WorldHeatValue);
 
 

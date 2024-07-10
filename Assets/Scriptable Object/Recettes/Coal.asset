@@ -17,7 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
   - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
   - {fileID: 11400000, guid: 9e330eb904811d24fbfc544eb08d6acc, type: 2}
-  objectPrefab: {fileID: 0}
-  ObjectImage: {fileID: 0}
+  objectPrefab: {fileID: 4458159580833626480, guid: 27bb5ff4241b33049adf1cbcdadff2c3,
+    type: 3}
+  ObjectImage: {fileID: 21300000, guid: 8608f4708dcc8214baf5c3f93d5129dc, type: 3}
   IsRecipe: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}
