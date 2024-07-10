@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
+
 
 public class PlayerCollect : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class PlayerCollect : MonoBehaviour
 
     public GameObject Menu;
     public Button ButtonMenu;
+    public Text ButtonMenuText;
 
     public Button Button1;
     public Button Button2;
@@ -31,6 +34,7 @@ public class PlayerCollect : MonoBehaviour
     private List<RecipesSO> RecipeS0Copy = new List<RecipesSO> (); 
 
     private RecipesSO RecipeSo;
+    public PlayerMovement playerMovement;
 
     void Start()
     {
@@ -81,6 +85,7 @@ public class PlayerCollect : MonoBehaviour
 
             Treatment treatment = other.GetComponent<Treatment>();
             protocoleiNSHALLAH = treatment;
+            ButtonMenuText.text = "Melt "+other.name;
 
             
             if ( MachinescriptableObject.objectName.Length > 0 )
@@ -95,6 +100,9 @@ public class PlayerCollect : MonoBehaviour
 
                     menuDisplay.Clicked();
                     Menu.SetActive(true);
+                    playerMovement.vitesseDeplacement = 0f; 
+                    
+
                     
                     
                     //treatment.AddQueue(MachinescriptableObject.SOprefab);
@@ -144,6 +152,7 @@ public class PlayerCollect : MonoBehaviour
                     Destroy(child.gameObject);
                 }
             }
+            playerMovement.vitesseDeplacement = 1.5f; 
 
 
         }
@@ -163,37 +172,40 @@ public class PlayerCollect : MonoBehaviour
         {
 
             inventory.RemoveItem(inventory.items[inventory.items.Count-1]);
+            imageObjects[inventory.items.Count].GetComponent<Image>().sprite = null;
+            i--;
 
                                             
-            int j = 0;
-            for(int k = 0;k < imageObjects.Length; k++)
-            {
-                RecipesSO baseItem = inventory.items[inventory.items.Count-1];
+            // int j = 0;
+            // for(int k = 0;k < imageObjects.Length; k++)
+            // {
+            //     RecipesSO baseItem = inventory.items[inventory.items.Count-1];
 
 
-                if(imageObjects[k].GetComponent<Image>().sprite.name == baseItem.objectName)
-                {
-                    while (j<5 && inventory.items.Count>1)
-                    {
-                        imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                        j++;
-                    }
-                    if(j==5)
-                    {
-                    imageObjects[j].GetComponent<Image>().sprite = null;
-                    i--;
-                    }
-                    if(inventory.items.Count==1)
-                    {
-                        imageObjects[j].GetComponent<Image>().sprite = null;
-                        i--;
-                    }
+            //     if(imageObjects[k].GetComponent<Image>().sprite.name == baseItem.objectName)
+            //     {
+            //         while (j<5 )
+            //         {
+            //             imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
+            //             j++;
+                        
+            //         }
+            //         if(j==5)
+            //         {
+            //             imageObjects[j].GetComponent<Image>().sprite = null;
+            //             i--;
+            //         }
+            //         // if(inventory.items.Count==1)
+            //         // {
+            //         //     imageObjects[j].GetComponent<Image>().sprite = null;
+            //         //     i--;
+            //         // }
 
-                    break;
-                }
-                j++;
+            //         break;
+            //     }
+            //     j++;
                 
-            }
+            // }
         }
     }
 
@@ -201,62 +213,7 @@ public class PlayerCollect : MonoBehaviour
     {
         if (Button1.interactable)
         {
-            RecipeSo = RecipeScriptableObject[0];
-            if(RecipeScriptableObject.Length>0)
-            {
-                Debug.Log("Recipe checked");
-                int p = 0;
-                foreach(var elem in RecipeScriptableObject[0].Input)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        p++;
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-
-                }
-                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
-                {
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < imageObjects.Length; k++)
-                        {
-                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                imageObjects[j].GetComponent<Image>().sprite = null;
-                                i--;
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }               
-                if(i==0 && protocoleiNSHALLAH)
-                {
-                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
-                }
-            }
-    
+            SelectAnDelete(0);
         }
     }
 
@@ -264,128 +221,112 @@ public class PlayerCollect : MonoBehaviour
     {
         if (Button2.interactable)
         {
-            RecipeSo = RecipeScriptableObject[1];
-            if(RecipeScriptableObject.Length>0)
-            {
-                int p = 0;
-                foreach(var elem in RecipeScriptableObject[1].Input)
-                {
-                    if(!inventory.items.Contains(elem))
-                    {
-                        p++;
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
-                        
-                    }
-                }
-                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
-                {
-
-                
-                    foreach(var elem in RecipeS0Copy)
-                    {
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < imageObjects.Length; k++)
-                        {
-                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                imageObjects[j].GetComponent<Image>().sprite = null;
-                                i--;
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    
-                    }
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }
-                if(i==0 && protocoleiNSHALLAH)
-                {
-                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
-                }
-            }
+            SelectAnDelete(1);
         }
     }
 
     public void OnClick3()
     {
+        // Vérifie si le bouton est interactif
         if (Button3.interactable)
         {
-            RecipeSo = RecipeScriptableObject[2];
-            if(RecipeScriptableObject.Length>0)
+            SelectAnDelete(2);
+        }
+    }
+
+    void SelectAnDelete(int whichone)
+    {
+                  // Récupère le troisième élément du tableau de recettes
+        RecipeSo = RecipeScriptableObject[whichone];
+        // Copie les objets de l'inventaire
+        
+        List<RecipesSO> InventoryCopy = new List<RecipesSO>(inventory.items);
+
+        if (RecipeScriptableObject.Length > 0)
+        {
+            Debug.Log(" Les objets de la recette sont :");
+            // Parcourt les éléments de la recette
+            foreach (var elem in RecipeSo.Input)
             {
-                int p = 0;
-                foreach(var elem in RecipeScriptableObject[2].Input)
-                {   
-                    if(!inventory.items.Contains(elem))
+                // Vérifie si l'élément est dans l'inventaire
+                if (InventoryCopy.Contains(elem))
+                {
+                    RecipeS0Copy.Add(elem);
+                    InventoryCopy.Remove(elem);
+                }
+                Debug.Log(elem.objectName + " ");
+            }
+
+
+            Debug.Log(" Les objets de l'inventaire sont :");
+            // Affiche les objets dans l'inventaire
+            foreach (var item in inventory.items)
+            {
+                Debug.Log(item.objectName + " ");
+            }
+
+            Debug.Log(" Les objets de la liste copiée sont :");
+            // Affiche les objets de la liste copiée
+            foreach (var item in RecipeS0Copy)
+            {
+                Debug.Log(item.objectName + " ");
+            }
+
+            // Vérifie si tous les objets nécessaires sont dans la liste copiée
+            if (RecipeS0Copy.Count == RecipeSo.Input.Length)
+            {
+                Debug.Log("tous les objets nécessaires sont dans la liste copiée");
+
+                if (protocoleiNSHALLAH)
+                {
+                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[whichone]);
+                    Debug.Log("Done");
+                }
+                foreach (var elem in RecipeS0Copy)
+                {
+                    // Supprime l'élément de l'inventaire
+                    inventory.RemoveItem(elem);
+
+                    Debug.Log("Supprimé");
+
+                    for (int k = 0; k < imageObjects.Length; k++)
                     {
-                        p++;
-                    }
-                    else
-                    {
-                        RecipeS0Copy.Add(elem);
+                        int j = k;
+                        if (imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
+                        {
+                            
+                            while (j < 5)
+                            {
+                                imageObjects[j].GetComponent<Image>().sprite = imageObjects[j + 1].GetComponent<Image>().sprite;
+                                j++;
+                                Debug.Log("trouvé j="+ j.ToString()+" k : " + k.ToString());
+                            }
+                            Debug.Log(imageObjects[5].name + " object name :"+elem.objectName);
+                            if (j == 5)
+                            {
+                                imageObjects[j].GetComponent<Image>().sprite = null;
+                                i--;
+                            }
+                            break;
+                            
+                        }
                         
                     }
                 }
-                if(RecipeS0Copy.Count == RecipeScriptableObject[1].Input.Length)
-                {
-                    foreach(var elem in RecipeS0Copy)
-                    {
 
-
-                        inventory.RemoveItem(elem);
-                                                        
-                        int j = 0;
-                        for(int k = 0;k < imageObjects.Length; k++)
-                        {
-                            if(imageObjects[k].GetComponent<Image>().sprite.name == elem.objectName)
-                            {
-                                while (j<5)
-                                {
-                                    imageObjects[j].GetComponent<Image>().sprite = imageObjects[j+1].GetComponent<Image>().sprite;
-                                    j++;
-                                }
-                                if(j==5)
-                                {
-                                imageObjects[j].GetComponent<Image>().sprite = null;
-                                i--;
-                                }
-                                break;
-                            }
-                            j++;
-                            
-                        }
-                    
                 
-                    }
-                
-                }
-                else
-                {
-                    Debug.Log("Manque de matériaux");
-                }
-                if(i==0 && protocoleiNSHALLAH)
-                {
-                    protocoleiNSHALLAH.AddQueue(RecipeScriptableObject[0]);
-                }
             }
+            else
+            {
+                UnityEngine.Debug.Log("Manque de matériaux");
+            }
+            // Ajoute à la queue si certaines conditions sont remplies
+ 
+
+            RecipeS0Copy.Clear();
         }
     }
+    
+
 }   
 

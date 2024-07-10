@@ -16,23 +16,13 @@ public class Treatment : MonoBehaviour
 
     public void AddQueue(RecipesSO Item)
     {
-        foreach(RecipesSO elem in Item.Input)
-        {
-            AddQueueObject(elem);
-            
-            
-        }
-    }
-
-    public void AddQueueObject(RecipesSO Item)
-    {
         if (Queue.Count == 0)
         {
             Queue.Add(Item);
             
-            
-            StartCoroutine(Treat());
             Debug.Log("Temp created");
+            StartCoroutine(Treat());
+            
  
         }
         else
@@ -41,6 +31,8 @@ public class Treatment : MonoBehaviour
         }
     }
 
+
+
     public IEnumerator Treat()
     {
 
@@ -48,7 +40,7 @@ public class Treatment : MonoBehaviour
         {
             RecipesSO Temp = Queue[0];
 
-            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 0, 4f), Quaternion.identity);
+            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab,transform.position + new Vector3(0, 3, 4f), Quaternion.identity);
             
 
             yield return new WaitForSeconds(2);
