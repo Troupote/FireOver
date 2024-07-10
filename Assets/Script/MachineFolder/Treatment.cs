@@ -7,6 +7,7 @@ public class Treatment : MonoBehaviour
 {
     private List<RecipesSO> Queue = new List<RecipesSO>();
     private IEnumerator enumerator;
+    public SliderValueChanger sliderchange;
 
 
     public void Start()
@@ -40,16 +41,31 @@ public class Treatment : MonoBehaviour
         {
             RecipesSO Temp = Queue[0];
 
-            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab, new Vector3(0, 0, 4f), Quaternion.identity);
-            
+            List<GameObject> spawnedObjects = new List<GameObject>();
+            float j = -1f;
+            foreach (var elem in Temp.Input)
+            {
+                GameObject ObjectMatToSpawn = Instantiate(elem.objectPrefab, transform.position + new Vector3(j, 0, 5f), Quaternion.identity);
+                spawnedObjects.Add(ObjectMatToSpawn);
+                j++;
+            }
+            j = -1f;
 
-            yield return new WaitForSeconds(2);
+            sliderchange.StartSlider(20);
+            yield return new WaitForSeconds(20);
+            sliderchange.EndV();
 
-            Destroy(ObjectToSpawn);
+            foreach (var obj in spawnedObjects)
+            {
+                Destroy(obj);
+            }
+
+            GameObject ObjectToSpawn = Instantiate(Temp.objectPrefab, transform.position + new Vector3(0, 0, -5f), Quaternion.identity);
+            yield return new WaitForSeconds(2); 
             Queue.RemoveAt(0);
             
 
-            yield return new WaitForSeconds(2);
+            
 
         }
     }

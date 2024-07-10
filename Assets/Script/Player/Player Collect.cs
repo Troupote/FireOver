@@ -87,7 +87,7 @@ public class PlayerCollect : MonoBehaviour
             protocoleiNSHALLAH = treatment;
             ButtonMenuText.text = "Melt "+other.name;
 
-            
+
             if ( MachinescriptableObject.objectName.Length > 0 )
             {
                 RecipeScriptableObject = menuDisplay.RecipeScriptableObject;
@@ -95,11 +95,12 @@ public class PlayerCollect : MonoBehaviour
                 
                 if (IsClickedBuy )
                 {
-
+                    
                     IsClickedBuy = false;
 
                     menuDisplay.Clicked();
                     Menu.SetActive(true);
+                    
                     playerMovement.vitesseDeplacement = 0f; 
                     
 
@@ -312,6 +313,8 @@ public class PlayerCollect : MonoBehaviour
                         }
                         
                     }
+
+
                 }
 
                 

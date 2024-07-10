@@ -24,7 +24,7 @@ public class MenuDisplay : MonoBehaviour
         Transform view = CraftingMenuPanel.transform.Find("View");
         Transform content = view.transform.Find("Content");
 
-        for (int i = 0; i < panels.Length; i++)
+        for (int i = 0; i < RecipeScriptableObject.Length; i++)
         {
             GameObject panel = Instantiate(panels[i], content.transform);
 
