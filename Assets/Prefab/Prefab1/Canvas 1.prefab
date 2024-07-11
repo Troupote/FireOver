@@ -1065,7 +1065,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'RandomButton
+
+'
 --- !u!1 &2105145757643328798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2199,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Inventaire
 --- !u!1 &3452960088666030622
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,7 +5621,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: machine
 --- !u!1 &6739778665031590331
 GameObject:
   m_ObjectHideFlags: 0

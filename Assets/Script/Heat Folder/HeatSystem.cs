@@ -64,16 +64,16 @@ public class HeatSystem : MonoBehaviour
             {
                 GameManager.GameOverScene();
             }
-            float lerp = -0.000005f * WorldHeatValue + 0.0f * (1 - WorldHeatValue);
+            float lerp = -0.00005f * WorldHeatValue + 0.0f * (1 - WorldHeatValue);
 
 
-            SnowMaterial.SetFloat("_HSnow", Mathf.Clamp(lerp, 0.00002f, 0.001f));
+            SnowMaterial.SetFloat("_HSnow", Mathf.Clamp(lerp, 0.0000f, 0.002f));
 
-            SnowMaterial.SetFloat("_HSnowRatio", ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f));
+            SnowMaterial.SetFloat("_HSnowRatio", ((lerp - 0.0000f) / (0.002f - 0.0000f) * 0.002f));
 
             //Debug.Log("Ammo left: " + ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f), this);
             HeatText.text = tmp.ToString("F2") + " °C";
-            WorldHeatValue -= WorldIncreasementValue*MultiplyHeatValue;
+            WorldHeatValue -= (WorldIncreasementValue*MultiplyHeatValue);
 
             yield return new WaitForSeconds(0.1f);
         }

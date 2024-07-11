@@ -19,7 +19,7 @@ public class loot_item : MonoBehaviour
     {
         for (int i = 0; i<50 ;i++)
         {
-            Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-50,50),2,UnityEngine.Random.Range(-50,50));
+            Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-50,50),3,UnityEngine.Random.Range(-50,50));
             GameObject newLoots = Instantiate(lootPrefab[i%(lootPrefab.Length)], randomPosition, Quaternion.identity);
         }
     }
