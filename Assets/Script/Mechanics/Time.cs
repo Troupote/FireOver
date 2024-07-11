@@ -23,7 +23,7 @@ public class Time : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(1f);
             timeValue++;
 
             int seconds = timeValue%60;

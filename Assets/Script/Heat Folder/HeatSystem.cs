@@ -18,6 +18,8 @@ public class HeatSystem : MonoBehaviour
     public Text buttonHeatText;
     public loot_item loot_item;
 
+    public float WorldIncreasementValue = 1f;
+
     public int Treshold;
 
     public GameManager GameManager;
@@ -71,7 +73,7 @@ public class HeatSystem : MonoBehaviour
 
             //Debug.Log("Ammo left: " + ((lerp - 0.00002f) / (0.001f - 0.00002f) * 0.001f), this);
             HeatText.text = tmp.ToString("F2") + " °C";
-            WorldHeatValue -= 1f*MultiplyHeatValue;
+            WorldHeatValue -= WorldIncreasementValue*MultiplyHeatValue;
 
             yield return new WaitForSeconds(0.1f);
         }
