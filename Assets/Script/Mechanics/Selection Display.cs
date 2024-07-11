@@ -175,6 +175,7 @@ public class Target : MonoBehaviour
             else
             {
                 Debug.Log("Manque de matériaux poutr les machines");
+                Informations.Canvas.SetActive(true);
                 Informations.StartCoroutine(Informations.ChangeSliderValueOverTime("Lack of Materials"));
             }    
             RecipeS0Copy.Clear();           
