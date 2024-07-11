@@ -18,6 +18,8 @@ public class HeatSystem : MonoBehaviour
     public Text buttonHeatText;
     public loot_item loot_item;
 
+    public int Treshold;
+
     public GameManager GameManager;
 
     private bool Active;
@@ -56,7 +58,7 @@ public class HeatSystem : MonoBehaviour
         while (true)
         {
             float tmp = PlayerHeatValue + WorldHeatValue;
-            if(tmp <0)
+            if(tmp < Treshold)
             {
                 GameManager.GameOverScene();
             }

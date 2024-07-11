@@ -173,9 +173,18 @@ public class PlayerCollect : MonoBehaviour
         if(buttonTrash.interactable)
         {
 
-            inventory.RemoveItem(inventory.items[inventory.items.Count-1]);
-            imageObjects[inventory.items.Count].GetComponent<Image>().sprite = null;
-            i--;
+            if(inventory.items.Count>0)
+            {
+                inventory.RemoveItem(inventory.items[inventory.items.Count-1]);
+                imageObjects[inventory.items.Count].GetComponent<Image>().sprite = null;
+                i--;
+            }
+            else
+            {
+
+            }
+
+
 
                                             
             // int j = 0;
@@ -323,6 +332,7 @@ public class PlayerCollect : MonoBehaviour
             else
             {
                 UnityEngine.Debug.Log("Manque de matériaux");
+                Informations.Canvas.SetActive(true);
                 Informations.StartCoroutine(Informations.ChangeSliderValueOverTime("Lack of Materials"));
                 
             }
