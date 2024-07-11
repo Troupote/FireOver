@@ -22,6 +22,8 @@ public class Target : MonoBehaviour
     public PlayerCollect PlayerCollect;
     private List<RecipesSO> RecipeS0Copy = new List<RecipesSO> (); 
 
+    public Informations Informations;
+
     void Start()
     {
         mainCamera = Camera.main;
@@ -173,6 +175,7 @@ public class Target : MonoBehaviour
             else
             {
                 Debug.Log("Manque de matériaux poutr les machines");
+                Informations.StartCoroutine(Informations.ChangeSliderValueOverTime("Lack of Materials"));
             }    
             RecipeS0Copy.Clear();           
         }

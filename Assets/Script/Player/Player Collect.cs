@@ -35,6 +35,7 @@ public class PlayerCollect : MonoBehaviour
 
     private RecipesSO RecipeSo;
     public PlayerMovement playerMovement;
+    public Informations Informations;
 
     void Start()
     {
@@ -322,6 +323,8 @@ public class PlayerCollect : MonoBehaviour
             else
             {
                 UnityEngine.Debug.Log("Manque de matériaux");
+                Informations.StartCoroutine(Informations.ChangeSliderValueOverTime("Lack of Materials"));
+                
             }
             // Ajoute à la queue si certaines conditions sont remplies
  
