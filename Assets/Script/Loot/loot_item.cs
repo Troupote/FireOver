@@ -19,8 +19,17 @@ public class loot_item : MonoBehaviour
     {
         for (int i = 0; i<50 ;i++)
         {
-            Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-50,50),3,UnityEngine.Random.Range(-50,50));
-            GameObject newLoots = Instantiate(lootPrefab[i%(lootPrefab.Length)], randomPosition, Quaternion.identity);
+            if(lootPrefab[i%(lootPrefab.Length)].name == "WoodPrefab")
+            {
+                Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-50,50),0,UnityEngine.Random.Range(-50,50));
+                GameObject newLoots = Instantiate(lootPrefab[i % lootPrefab.Length], randomPosition, Quaternion.Euler(-90, 0, 0));
+            }
+            else
+            {   
+                Vector3 randomPosition = new Vector3(UnityEngine.Random.Range(-50,50),3,UnityEngine.Random.Range(-50,50));
+                GameObject newLoots = Instantiate(lootPrefab[i%(lootPrefab.Length)], randomPosition, Quaternion.identity);
+            }
+
         }
     }
 

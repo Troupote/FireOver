@@ -30,6 +30,8 @@ public class HeatSystem : MonoBehaviour
     {
         SnowMaterial = SnowMesh.material;
         SnowMaterial.SetFloat("_HSnow", 0.0004f);
+        WorldHeatValue = 15;
+        PlayerHeatValue = 60;
         StartCoroutine(Heater());
         StartCoroutine(timeHazard());
     }
@@ -46,12 +48,18 @@ public class HeatSystem : MonoBehaviour
 
     public void AddPlayerHeat(float v)
     {
+
+        
         PlayerHeatValue += v;
+
     }
 
     public void RemouvePlayerHeat(float v)
     {
+
         PlayerHeatValue -= v;
+
+        
     }
 
     // Définir la coroutine
@@ -59,6 +67,7 @@ public class HeatSystem : MonoBehaviour
     {
         while (true)
         {
+            
             float tmp = PlayerHeatValue + WorldHeatValue;
             if(tmp < Treshold)
             {
@@ -85,7 +94,7 @@ public class HeatSystem : MonoBehaviour
         {
             if(buttonHeat.interactable)
             {
-                MultiplyHeatValue ++;
+                MultiplyHeatValue += 10;
                 Active = false; 
                 loot_item.Creation(); 
                 

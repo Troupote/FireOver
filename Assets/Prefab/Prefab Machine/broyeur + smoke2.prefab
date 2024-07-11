@@ -175,13 +175,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059846001626640944}
-  - component: {fileID: 7731458539384065210}
   - component: {fileID: -1576148796777806094}
   - component: {fileID: 6082742558133332708}
   - component: {fileID: -3811460956970832010}
   - component: {fileID: -4379984676851951517}
   - component: {fileID: 5207575227371304960}
-  - component: {fileID: 4212294421269298243}
+  - component: {fileID: 3921638288113937001}
   m_Layer: 0
   m_Name: broyeur + smoke2
   m_TagString: Untagged
@@ -224,27 +223,6 @@ Transform:
   - {fileID: 6526650307223218522}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -50.76, z: 0}
---- !u!65 &7731458539384065210
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885130358725764896}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 3, z: 3}
-  m_Center: {x: 0.08627623, y: 1.1416494, z: 0.018628597}
 --- !u!114 &-1576148796777806094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,36 +302,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHeat: {fileID: 0}
-  c: {fileID: 7731458539384065210}
+  c: {fileID: 3921638288113937001}
   AddAllTime: 75
   AddOnlyInRange: 150
---- !u!54 &4212294421269298243
-Rigidbody:
+--- !u!135 &3921638288113937001
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885130358725764896}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 7
+  m_Center: {x: 4, y: 0, z: 0}
 --- !u!1 &2120336220401399227
 GameObject:
   m_ObjectHideFlags: 0

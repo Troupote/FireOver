@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class HeatMachine : MonoBehaviour
 {
     public HeatSystem PlayerHeat;
-    public BoxCollider c;
+    public SphereCollider c;
     public float AddAllTime;
     public float AddOnlyInRange;
 
@@ -17,7 +17,6 @@ public class HeatMachine : MonoBehaviour
         //Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
 
         // cast to player
-
         PlayerHeat.AddPlayerHeat(AddOnlyInRange);
 
     }

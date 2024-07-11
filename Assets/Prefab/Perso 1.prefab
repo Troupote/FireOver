@@ -405,10 +405,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1800f8980643773498fdf47768e4f195,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6464161594266061212}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1800f8980643773498fdf47768e4f195,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7157488806037945911}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1800f8980643773498fdf47768e4f195,
         type: 3}
@@ -461,33 +457,6 @@ CapsuleCollider:
   m_Height: 4.000001
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
---- !u!54 &6464161594266061212
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139124892019800511}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!114 &7157488806037945911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +525,7 @@ MonoBehaviour:
   buttonHeat: {fileID: 0}
   buttonHeatText: {fileID: 0}
   loot_item: {fileID: 0}
+  WorldIncreasementValue: 1
   Treshold: -500
   GameManager: {fileID: 0}
 --- !u!4 &8914922036901536517 stripped
