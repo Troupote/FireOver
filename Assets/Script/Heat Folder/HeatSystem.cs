@@ -85,7 +85,7 @@ public class HeatSystem : MonoBehaviour
             {
                 MultiplyHeatValue ++;
                 Active = false;
-                loot_item.Creation();
+                loot_item.Creation(); 
                 
             }
         }
