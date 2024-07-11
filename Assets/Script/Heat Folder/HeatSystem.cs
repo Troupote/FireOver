@@ -84,7 +84,7 @@ public class HeatSystem : MonoBehaviour
             if(buttonHeat.interactable)
             {
                 MultiplyHeatValue ++;
-                Active = false;
+                Active = false; 
                 loot_item.Creation(); 
                 
             }
