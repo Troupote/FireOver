@@ -14,7 +14,7 @@ public class HeatMachine : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
+        //Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
 
         // cast to player
 
@@ -24,7 +24,7 @@ public class HeatMachine : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
+        //Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
         PlayerHeat.RemouvePlayerHeat(AddOnlyInRange);
     }
 

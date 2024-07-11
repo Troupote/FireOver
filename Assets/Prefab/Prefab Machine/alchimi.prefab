@@ -370,7 +370,7 @@ MonoBehaviour:
   - {fileID: 755391834915184437, guid: b352e28dfbb524e4f9c56554674879d9, type: 3}
   - {fileID: 755391834915184437, guid: a88037cd8a4214d4b855cfd51aba2198, type: 3}
   treatment: {fileID: 6425970565791942508}
-  inventory: {fileID: 3031450353311484477, guid: be7f8e45b6c64764589238f8486093af,
+  inventory: {fileID: 6087260208331331218, guid: b9897a3ef194a674db777e746550f6b5,
     type: 3}
   MachineobjectWithSO: {fileID: 8801199768395988389}
 --- !u!114 &253372189241708987

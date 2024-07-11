@@ -18,7 +18,7 @@ public class MenuDisplay : MonoBehaviour
 
     public void Clicked()
     {
-        GameObject selectionPanel = GameObject.Find("Canvas");
+        GameObject selectionPanel = GameObject.Find("Canvas 1");
         Transform CraftingMenu = selectionPanel.transform.Find("CraftingMenu");
         Transform CraftingMenuPanel = CraftingMenu.transform.Find("Crafting Menu Panel");
         Transform view = CraftingMenuPanel.transform.Find("View");

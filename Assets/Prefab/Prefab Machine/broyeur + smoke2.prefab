@@ -176,12 +176,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1059846001626640944}
   - component: {fileID: 7731458539384065210}
-  - component: {fileID: 4545852040629811960}
-  - component: {fileID: -8245673106397018589}
   - component: {fileID: -1576148796777806094}
   - component: {fileID: 6082742558133332708}
   - component: {fileID: -3811460956970832010}
   - component: {fileID: -4379984676851951517}
+  - component: {fileID: 5207575227371304960}
+  - component: {fileID: 4212294421269298243}
   m_Layer: 0
   m_Name: broyeur + smoke2
   m_TagString: Untagged
@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885130358725764896}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.42862228, z: -0, w: 0.9034838}
+  m_LocalRotation: {x: 0, y: -0.4286197, z: 0, w: 0.903485}
   m_LocalPosition: {x: -4.15, y: 0.16214538, z: 1.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -243,47 +243,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 3, z: 10}
+  m_Size: {x: 2, y: 3, z: 3}
   m_Center: {x: 0.08627623, y: 1.1416494, z: 0.018628597}
---- !u!54 &4545852040629811960
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885130358725764896}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &-8245673106397018589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1885130358725764896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45557b414d536914bb6b80589e1b42c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1576148796777806094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +293,7 @@ MonoBehaviour:
   - {fileID: 755391834915184437, guid: b352e28dfbb524e4f9c56554674879d9, type: 3}
   - {fileID: 755391834915184437, guid: a88037cd8a4214d4b855cfd51aba2198, type: 3}
   treatment: {fileID: 6082742558133332708}
-  inventory: {fileID: 3031450353311484477, guid: be7f8e45b6c64764589238f8486093af,
+  inventory: {fileID: 6087260208331331218, guid: b9897a3ef194a674db777e746550f6b5,
     type: 3}
   MachineobjectWithSO: {fileID: -1576148796777806094}
 --- !u!114 &-4379984676851951517
@@ -350,6 +311,49 @@ MonoBehaviour:
   Canvas: {fileID: 1755164048281858658}
   slider: {fileID: 6020093555001861001}
   targetValue: 1
+--- !u!114 &5207575227371304960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885130358725764896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4f2045f008b35b4eb72c08abaa86ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerHeat: {fileID: 0}
+  c: {fileID: 7731458539384065210}
+  AddAllTime: 75
+  AddOnlyInRange: 150
+--- !u!54 &4212294421269298243
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885130358725764896}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2120336220401399227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,7 +5665,7 @@ ParticleSystemRenderer:
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1
-  m_ApplyActiveColorSpace: 1
+  m_ApplyActiveColorSpace: 0
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
@@ -6405,7 +6409,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2041807574202984480, guid: c19b235481febb74e91b789ca2278aa6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
