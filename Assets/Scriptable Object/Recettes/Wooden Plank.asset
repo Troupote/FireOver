@@ -16,7 +16,7 @@ MonoBehaviour:
   Input:
   - {fileID: 11400000, guid: 790f4694ee52cd049b365744accc734c, type: 2}
   - {fileID: 11400000, guid: 790f4694ee52cd049b365744accc734c, type: 2}
-  objectPrefab: {fileID: 4458159580833626480, guid: a194e1d904719604f9ee55cc9fad2a45,
+  objectPrefab: {fileID: 438650837584919430, guid: 7302cfab54d047d40ba390a5cd68efaa,
     type: 3}
   ObjectImage: {fileID: 21300000, guid: 1863c603243e3ae499fb2528bae04b33, type: 3}
   IsRecipe: 1
