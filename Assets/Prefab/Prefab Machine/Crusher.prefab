@@ -181,9 +181,9 @@ GameObject:
   - component: {fileID: -4379984676851951517}
   - component: {fileID: 5207575227371304960}
   - component: {fileID: 3921638288113937001}
-  - component: {fileID: 1604732751128475231}
+  - component: {fileID: 2379887695532516930}
   m_Layer: 0
-  m_Name: broyeur + smoke2
+  m_Name: Crusher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,8 +302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f2045f008b35b4eb72c08abaa86ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHeat: {fileID: 2555640522468716444, guid: b9897a3ef194a674db777e746550f6b5,
-    type: 3}
   c: {fileID: 3921638288113937001}
   AddAllTime: 75
   AddOnlyInRange: 150
@@ -328,7 +326,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 7
   m_Center: {x: 4, y: 0, z: 0}
---- !u!54 &1604732751128475231
+--- !u!54 &2379887695532516930
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -86,7 +86,7 @@ public class PlayerCollect : MonoBehaviour
 
             Treatment treatment = other.GetComponent<Treatment>();
             protocoleiNSHALLAH = treatment;
-            ButtonMenuText.text = "Melt "+other.name;
+            ButtonMenuText.text = "Open "+other.name;
 
 
             if ( MachinescriptableObject.objectName.Length > 0 )

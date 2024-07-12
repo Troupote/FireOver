@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(buttonGO.interactable)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
 
