@@ -52,6 +52,7 @@ public class Treatment : MonoBehaviour
             j = -1f;
 
             sliderchange.StartSlider(20);
+            Debug.Log("Done");
             yield return new WaitForSeconds(20);
             sliderchange.EndV();
 

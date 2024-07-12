@@ -42,6 +42,7 @@ public class SliderValueChanger : MonoBehaviour
         StartCoroutine(ChangeSliderValueOverTime(slider, targetValue, duration));
         
     }
+    
     public void EndV()
     {
         Canvas.SetActive(false);
