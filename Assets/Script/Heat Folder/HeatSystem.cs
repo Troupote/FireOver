@@ -30,8 +30,8 @@ public class HeatSystem : MonoBehaviour
     {
         SnowMaterial = SnowMesh.material;
         SnowMaterial.SetFloat("_HSnow", 0.0004f);
-        // WorldHeatValue = 15;
-        // PlayerHeatValue = 60;
+        WorldHeatValue = 15;
+        PlayerHeatValue = 60;
         StartCoroutine(Heater());
         StartCoroutine(timeHazard());
     }
@@ -94,7 +94,7 @@ public class HeatSystem : MonoBehaviour
         {
             if(buttonHeat.interactable)
             {
-                MultiplyHeatValue += 1;
+                MultiplyHeatValue += 10;
                 Active = false; 
                 loot_item.Creation(); 
                 
