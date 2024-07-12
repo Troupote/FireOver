@@ -31,6 +31,8 @@ public class Time : MonoBehaviour
             if(timeValue > 1200 && !Canvasred.activeSelf)
             {
                 Canvas.SetActive(true);
+                Time.timeScale = 0f;
+
             }
 
             int seconds = timeValue%60;

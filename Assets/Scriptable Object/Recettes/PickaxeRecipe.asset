@@ -18,6 +18,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c32900f94012baa45a4594179daa16bd, type: 2}
   objectPrefab: {fileID: 1730775383743172265, guid: 8bcdca7a43bf75d468e30c297903732f,
     type: 3}
-  ObjectImage: {fileID: 21300000, guid: 97e1c72a836df16488e27653b36f8756, type: 3}
+  ObjectImage: {fileID: 21300000, guid: ee102efda4f8abf4a81b0eb70f709214, type: 3}
   IsRecipe: 0
   objectColor: {r: 0, g: 0, b: 0, a: 0}

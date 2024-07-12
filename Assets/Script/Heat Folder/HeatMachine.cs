@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class HeatMachine : MonoBehaviour
 {
-    public HeatSystem PlayerHeat;
+    private HeatSystem PlayerHeat;
     public SphereCollider c;
     public float AddAllTime;
     public float AddOnlyInRange;
@@ -15,7 +15,9 @@ public class HeatMachine : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO -- HYVERNO");
-
+        GameObject player = GameObject.FindWithTag("Player");
+        PlayerHeat = player.GetComponent<HeatSystem>();
+        
         // cast to player
         PlayerHeat.AddPlayerHeat(AddOnlyInRange);
 

@@ -28,6 +28,8 @@ public class Target : MonoBehaviour
     {
         mainCamera = Camera.main;
         renderer = GetComponent<Renderer>();
+        MachineCreated = false; 
+        Created = false;
     }
 
     void Update()
@@ -133,14 +135,18 @@ public class Target : MonoBehaviour
                 {
                     RecipeS0Copy.Add(elem);
                     InventoryCopy.Remove(elem);
+                    
                 }
+                Debug.Log(elem.objectName + " " + MachineobjectWithSO.myMachineScriptableObject.objectName);
 
             }
             if(RecipeS0Copy.Count == MachineobjectWithSO.myMachineScriptableObject.SOprefab.Length)
             {
-                if (Created && !MachineCreated)
+                Debug.Log("Created + :" + Created);
+                Debug.Log("MachineCreated + :" + MachineCreated);
+                if ( !MachineCreated)
                 {
-                    GameObject Machine = Instantiate(Oven[index], realPosition, Quaternion.identity);
+                    GameObject Machine = Instantiate(Oven[index], realPosition + new Vector3(0,0,0), Quaternion.identity);
                     MachineCreated = true;
 
                 }
@@ -176,8 +182,9 @@ public class Target : MonoBehaviour
             {
                 foreach(var elem in RecipeS0Copy)
                 {
-                    Debug.Log(elem.objectName);
+                    Debug.Log("+ :" + elem.objectName);
                 }
+
                 Debug.Log("Manque de matériaux poutr les machines");
                 Informations.Canvas.SetActive(true);
                 Informations.StartCoroutine(Informations.ChangeSliderValueOverTime("Lack of Materials"));

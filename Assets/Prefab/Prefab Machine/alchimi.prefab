@@ -387,7 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f2045f008b35b4eb72c08abaa86ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHeat: {fileID: 0}
+  PlayerHeat: {fileID: 2555640522468716444, guid: b9897a3ef194a674db777e746550f6b5,
+    type: 3}
   c: {fileID: 4669754485709589245}
   AddAllTime: 200
   AddOnlyInRange: 500
