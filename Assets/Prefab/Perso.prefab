@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 718095016602068600}
   - component: {fileID: 6567183118660343899}
   - component: {fileID: 3541927227764532561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SNOW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4841,7 +4841,7 @@ GameObject:
   - component: {fileID: 7586277292692882468}
   - component: {fileID: 6132682508719678524}
   - component: {fileID: 258005269375310174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4971,6 +4971,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5117700066308340382, guid: 1800f8980643773498fdf47768e4f195,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -4587302668392987624, guid: 1800f8980643773498fdf47768e4f195,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4982,10 +4987,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 509f99d49d6ca524fb562843904d89d2, type: 2}
+    - target: {fileID: 117214286460000749, guid: 1800f8980643773498fdf47768e4f195,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1800f8980643773498fdf47768e4f195,
         type: 3}
       propertyPath: m_Name
       value: Perso
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1800f8980643773498fdf47768e4f195,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5035,6 +5050,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitesseDeplacement: 5
+  minX: -10
+  maxX: 10
+  minZ: -10
+  maxZ: 10
 --- !u!136 &527065156303497958
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5304,6 +5323,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PLAYER_FLAME
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718922108263705009, guid: 1f23ee8790bdc174580fb8cc2ee8958f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
